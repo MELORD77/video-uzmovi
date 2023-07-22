@@ -6,6 +6,10 @@ const routes = [
     path: ":id",
     element: <VideoPlayer />,
   },
+  {
+    path: "*",
+    element: <VideoPlayer />,
+  },
 ];
 
 export default routes;

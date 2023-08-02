@@ -1,6 +1,7 @@
 .video-wrapper {
   position: relative;
   width: 100%;
+  margin-top: 10%;
 }
 
 .react-player {
@@ -8,5 +9,62 @@
   top: 0;
   left: 0;
   width: 100% !important;
-  height: 100% !important;
+  height: 100vh !important;
+}
+.custom-playIcon {
+  width: 150px;
+  height: 150px;
+}
+.play-icon-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px);
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.download-Button {
+  background: rgb(24, 75, 151) !important;
+  width: 100px;
+  height: 30px;
+  border-radius: 0px;
+  margin-top: 15px;
+}
+.download-Button p {
+  font-size: 10px;
+}
+@media (max-width: 767px) {
+  .react-player__preview {
+    height: 27vh !important;
+  }
+
+  .custom-playIcon {
+    width: 55px;
+    height: 50px;
+  }
+  .play-icon-box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2px);
+    border: 1px solid #fff;
+    border-radius: 50%;
+  }
+  /* .download-Button {
+    background: rgb(24, 75, 151) !important;
+    width: 50px;
+    height: 15px;
+  }
+  .download-Button p {
+    font-size: 5px;
+  } */
+}
+@media (min-width: 967px) {
+  .react-player__preview {
+    height: 65vh !important;
+  }
 }

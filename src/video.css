@@ -1,55 +1,97 @@
+.main-container {
+  background-image: url("./images/16-9.png");
+  background-size: 100% 104.5%;
+  object-fit: contain;
+  /* z-index: -1; */
+  /* filter: blur(8px); */
+}
+p {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 1.5rem;
+  font-weight: 1000;
+  letter-spacing: 0.2rem;
+  width: 100%;
+  height: 100%;
+  color: rgb(129, 235, 138);
+  /* background: rgba(23, 11, 194, 0.349); */
+  text-align: center;
+  /* mix-blend-mode: multiply; */
+  text-shadow: -2px 2px 0px black, -5px 5px 5px white;
+}
+.main-box {
+  z-index: 2 !important;
+  /* border: 1px solid red; */
+}
 .video-wrapper {
   position: relative;
   width: 100%;
   margin-top: 10%;
 }
 
-.react-player {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100vh !important;
-}
 .custom-playIcon {
   width: 150px;
   height: 150px;
 }
+
 .play-icon-box {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(7, 172, 81, 0.904);
+  color: #fff !important;
   backdrop-filter: blur(2px);
   border: 1px solid #fff;
   border-radius: 50%;
 }
 .download-Button {
-  background: rgb(24, 75, 151) !important;
-  width: 100px;
-  height: 30px;
-  border-radius: 0px;
-  margin-top: 15px;
+  background: rgb(9, 129, 45) !important;
+  width: 120px;
+  height: 40px;
+  border-radius: 40px !important;
+  margin-top: 5px;
 }
 .download-Button p {
   font-size: 10px;
 }
-@media (max-width: 767px) {
-  .react-player__preview {
-    height: 27vh !important;
+@media only screen and (max-width: 768px) {
+  .main-container {
+    background-image: url("./images/9-16.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 
+  .download-Button {
+    background: rgb(10, 165, 69) !important;
+    width: 100px;
+    height: 30px;
+    border-radius: 0px;
+    margin-top: 5px;
+  }
+  .download-Button p {
+    font-size: 10px;
+  }
   .custom-playIcon {
     width: 55px;
     height: 50px;
   }
+  .custom-playIcon :hover {
+    width: 95px;
+    height: 80px;
+  }
   .play-icon-box {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(7, 172, 81, 0.904);
+    color: #fff !important;
     backdrop-filter: blur(2px);
     border: 1px solid #fff;
     border-radius: 50%;
@@ -65,6 +107,10 @@
 }
 @media (min-width: 967px) {
   .react-player__preview {
+    height: 65vh !important;
+  }
+
+  .react-player {
     height: 65vh !important;
   }
 }

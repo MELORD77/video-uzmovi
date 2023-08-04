@@ -1,37 +1,32 @@
 import React, { useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player";
-import img from "./images/16-9.png";
 import "./video.css";
 import Container from "@mui/material/Container";
+import Zoom from "react-reveal/Zoom";
 import { Box, Button, Typography } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 const VideoPlayer = () => {
+  const hash = window.location.hash ? atob(window.location.hash.slice(1)) : "";
   const player = useRef(null);
   const [url, setUrl] = useState("");
-  const [count, setCount] = useState(true);
-  const customPlayIcon = (
-    <div className="play-icon-box">
-      <svg className="custom-playIcon" viewBox="0 0 250 250">
-        <PlayArrowIcon style={{ color: "grey" }} />
-      </svg>
-    </div>
-  );
+  const [display, setDisplay] = useState("none");
+
   const handlePlay = (id) => {
     // Start playback manually
     if (!window.location.hash) {
       setUrl("https://filetransfer.io/data-package/BHb9JOLj/download");
     }
     if (player.current) {
-      count && player.current.seekTo(10);
+      // count && player.current.seekTo(10);
       // Replace 10 with the time (in seconds) you want to start from
-      id && setCount(false);
+      // id && setCount(false);
     }
   };
   const handleDownload = () => {
     // Get the video URL from the player component
     if (player.current) {
       const videoUrl = window.location.hash
-        ? atob(window.location.hash.slice(1))
+        ? JSON.parse(atob(window.location.hash.slice(1)))?.url
         : url;
       if (videoUrl) {
         const link = document.createElement("a");
@@ -48,44 +43,81 @@ const VideoPlayer = () => {
   }, []);
 
   return (
-    <Container
-      // maxWidth={"xl"}
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "90vh",
-        width: "100%",
-      }}
-    >
-      <div className="video-wrapper">
-        <ReactPlayer
-          controls
-          width={"100%"}
-          height={"100%"}
-          ref={player}
-          playIcon={customPlayIcon}
-          playing
-          light={img}
-          onPlay={() => handlePlay("3")}
-          url={window.location.hash ? atob(window.location.hash.slice(1)) : url}
-        />
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "end",
-            mt: 1,
-          }}
-        >
-          <Button
-            variant="contained"
-            className="download-Button"
-            onClick={handleDownload}
+    <Container className="main-container" maxWidth={"xl"}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          width: "100%",
+        }}
+      >
+        <Box sx={{ width: "100%", display: display }} className="main-box">
+          <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
+            {/* <Typography
+              sx={{}}
+              variant="h5"
+              color={"#fff"}
+              fontWeight={"900"}
+              fontFamily="Helvetica, Arial, sans-serif"
+            >
+              {window.location.hash
+                ? JSON.parse(atob(window.location.hash.slice(1)))?.name
+                : "name"}
+            </Typography> */}
+            <p>
+              {window.location.hash
+                ? JSON.parse(atob(window.location.hash.slice(1)))?.name
+                : "name"}
+            </p>
+          </Box>
+          <div>
+            <Zoom when={display === "block" && true}>
+              <ReactPlayer
+                width={"100%"}
+                height={"auto"}
+                controls
+                ref={player}
+                // playIcon={customPlayIcon}
+                playing
+                // light={img}
+                onPlay={() => handlePlay("3")}
+                url={
+                  window.location.hash
+                    ? JSON.parse(atob(window.location.hash.slice(1)))?.url
+                    : url
+                }
+              />
+            </Zoom>
+          </div>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "end",
+              mb: 1,
+            }}
           >
-            <Typography variant="button">Download</Typography>
-          </Button>
+            <Button
+              variant="contained"
+              className="download-Button"
+              onClick={handleDownload}
+            >
+              <Typography variant="button">Download</Typography>
+            </Button>
+          </Box>
         </Box>
-      </div>
+        <Box sx={{ display: display === "none" ? "block" : "none" }}>
+          <div className="play-icon-box">
+            <svg className="custom-playIcon" viewBox="0 0 250 250">
+              <PlayArrowIcon
+                style={{ color: "#fff" }}
+                onClick={() => setDisplay("block")}
+              />
+            </svg>
+          </div>
+        </Box>
+      </Box>
     </Container>
   );
 };

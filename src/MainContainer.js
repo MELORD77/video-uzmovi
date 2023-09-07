@@ -5,24 +5,29 @@ import Zoom from "react-reveal/Zoom";
 import { Box } from "@mui/material";
 import ResponsiveGrid from "./ResponsiveGrid";
 import ResponsiveAppBar from "./Navbar";
+import { styled } from "styled-components";
+
+const StyledBox = styled.div`
+  font-size: 1.5em;
+  text-align: center;
+  color: #bf4f74;
+`;
 const MainPage = () => {
   return (
-    <>
-      <Container className="main-container" maxWidth={"xl"}>
-        <ResponsiveAppBar />
+    <div className="main-container">
+      <ResponsiveAppBar />
+      <Container maxWidth={"xl"}>
         <Box
           sx={{
             display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "94.6vh",
+            height: "90vh",
             width: "100%",
           }}
         >
           <ResponsiveGrid />
         </Box>
       </Container>
-    </>
+    </div>
   );
 };
 export default MainPage;

@@ -7,7 +7,7 @@ function App() {
   const content = useRoutes(routes);
   return (
     <HelmetProvider>
-      <Helmet titleTemplate="%s | KinoPoisk" defaultTitle="KinoPoisk" />
+      <Helmet titleTemplate="%s | Musofir" defaultTitle="Musofir" />
       {content}
     </HelmetProvider>
   );

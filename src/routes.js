@@ -1,14 +1,10 @@
 import React from "react";
-import VideoPlayer from "./videoBlob";
+import MainPage from "./MainContainer";
 
 const routes = [
   {
-    path: ":id",
-    element: <VideoPlayer />,
-  },
-  {
     path: "*",
-    element: <VideoPlayer />,
+    element: <MainPage />,
   },
 ];
 

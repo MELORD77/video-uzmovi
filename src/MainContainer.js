@@ -20,7 +20,7 @@ const MainPage = () => {
         <Box
           sx={{
             display: "flex",
-            height: "90vh",
+            height: "85vh",
             width: "100%",
           }}
         >

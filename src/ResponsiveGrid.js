@@ -3,8 +3,13 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 import "./border.css";
 import { createTheme } from "@mui/material/styles";
-import { Button, Typography } from "@mui/material";
 import image from "../src/images/logo1.jpg";
+import { MessageBox } from "react-chat-elements";
+import Fade from "react-reveal/Fade";
+import ResponsiveDialog from "./AlertDialog";
+import { Typography } from "@mui/material";
+import { Bounce, Flip, Zoom } from "react-reveal";
+import "react-chat-elements/dist/main.css";
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -19,8 +24,7 @@ const theme = createTheme({
 });
 
 const GridData = [
-  { id: 0, click: true },
-  { id: 1, click: false },
+  { id: 1, click: true },
   { id: 2, click: true },
   { id: 3, click: true },
   { id: 4, click: true },
@@ -29,8 +33,9 @@ const GridData = [
   { id: 7, click: true },
   { id: 8, click: true },
   { id: 9, click: true },
-  { id: 11, click: true },
-  { id: 12, click: false },
+  { id: 10, click: true },
+  { id: 11, click: false },
+  { id: 12, click: true },
   { id: 13, click: true },
   { id: 14, click: true },
   { id: 15, click: true },
@@ -46,18 +51,34 @@ const GridData = [
 ];
 
 export default function ResponsiveGrid() {
+  const [open, setOpen] = React.useState(false);
+  const [display, setDisplay] = React.useState("none");
+  const [alertInfo, setAlert] = React.useState(false);
+
   const handleSort = (id) => {
     // eslint-disable-next-line array-callback-return
     GridData.filter((e) => e.id === id).forEach((e) => (e.click = false));
 
     console.log(id);
   };
+  const handleClickOpen = () => {
+    setOpen(true);
+    setTimeout(() => {
+      setOpen(false);
+      console.log("asdfasdf");
+    }, [1500]);
+  };
+  setTimeout(() => {
+    setAlert(!alertInfo);
+  }, 4000);
+
   return (
     <Box
       sx={{
         flexGrow: 1,
         paddingTop: { lg: "30px", md: "30px" },
         paddingBottom: { lg: "40px", md: "", sm: "40px", xs: "40px" },
+        position: "relative",
       }}
       display={"flex"}
       justifyContent={"center"}
@@ -76,7 +97,7 @@ export default function ResponsiveGrid() {
               display: "flex",
               justifyContent: "center",
 
-              height: { md: "180px" },
+              height: { md: "180px", lg: "150px" },
             }}
             xs={1}
             sm={1}
@@ -88,16 +109,18 @@ export default function ResponsiveGrid() {
             <Box
               className="border-animation"
               sx={{
-                boxShadow: "0px -10px 15px 1px rgba(225,230,242,0.75)",
+                boxShadow: `0px -8px 16px -5px  ${
+                  !e.click ? "rgba(218,65,32,0.75)" : "rgba(225,230,242,0.75)"
+                }`,
                 position: "relative",
                 display: "flex",
                 justifyContent: "center",
                 pt: 0.3,
-                borderRadius: "10px",
-                width: { lg: "65%", md: "100%", sm: "40%", xs: "70%" },
-                height: { lg: "25px", md: "30px", sm: "40px", xs: "15px" },
+                borderRadius: { lg: "10px", sm: "10px", xs: "5px" },
+                width: { lg: "70%", md: "100%", sm: "40%", xs: "65%" },
+                height: { lg: "25px", md: "30px", sm: "40px", xs: "12px" },
                 borderLeft: {
-                  xs: `6px solid ${e.click ? "#ecf5ef" : "#F33D28"}`,
+                  xs: `6px solid ${e.click ? "#ff3103" : "#F33D28"}`,
                   lg: `10px solid ${e.click ? "#ecf5ef" : "#F33D28"}`,
                   md: `10px solid ${e.click ? "#ecf5ef" : "#F33D28"}`,
                 },
@@ -122,26 +145,45 @@ export default function ResponsiveGrid() {
               }}
             >
               <Box
-                className="back"
                 onClick={() => {
                   handleSort(e.id);
+                  handleClickOpen();
                 }}
-                // sx={{
-                //   boxShadow:
-                //     " rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;",
-                //   width: { lg: "95%", md: "95%", xs: "95%" },
-                //   height: { lg: "90px", md: "110px", xs: "60px" },
-                //   bgcolor: "rgb(255,255,253,0.9)",
-                //   position: "relative",
-                // }}
+                sx={{
+                  boxShadow: " rgba(0, 0, 0, 0.80) 0px 25px 20px -20px;",
+                  // " rgba(50, 50, 93, 0.5) 0px 130px 160px -2px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px  inset;",
+                  width: { xl: "95%", lg: "80%", md: "95%", xs: "90%" },
+                  height: {
+                    xl: "120px",
+                    lg: "110px",
+                    md: "110px",
+                    xs: "60px",
+                    sm: "15px",
+                  },
+                  position: "relative",
+                }}
               >
-                <Typography align="center">Card {e.id}</Typography>
-                {/* <img src={image} alt="img" className="card-image" />s */}
+                {e.click && (
+                  <>
+                    <Typography
+                      display={{ xl: "block", xs: "none" }}
+                      align="center"
+                    >
+                      Card {e.id}
+                    </Typography>
+                    <img src={image} alt="img" className="card-image" />
+                  </>
+                )}
               </Box>
             </Box>
           </Grid>
         ))}
       </Grid>
+
+      <ResponsiveDialog open={open} setOpen={setOpen} />
+      {/* {alert && ( */}
+
+      {/* )} */}
     </Box>
   );
 }

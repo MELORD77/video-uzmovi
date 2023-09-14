@@ -7,7 +7,7 @@ import image from "../src/images/logo1.jpg";
 import { MessageBox } from "react-chat-elements";
 import Fade from "react-reveal/Fade";
 import ResponsiveDialog from "./AlertDialog";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Bounce, Flip, Zoom } from "react-reveal";
 import "react-chat-elements/dist/main.css";
 const theme = createTheme({
@@ -52,7 +52,6 @@ const GridData = [
 
 export default function ResponsiveGrid() {
   const [open, setOpen] = React.useState(false);
-  const [display, setDisplay] = React.useState("none");
   const [alertInfo, setAlert] = React.useState(false);
 
   const handleSort = (id) => {
@@ -65,7 +64,6 @@ export default function ResponsiveGrid() {
     setOpen(true);
     setTimeout(() => {
       setOpen(false);
-      console.log("asdfasdf");
     }, [1500]);
   };
   setTimeout(() => {
@@ -76,8 +74,8 @@ export default function ResponsiveGrid() {
     <Box
       sx={{
         flexGrow: 1,
-        paddingTop: { lg: "30px", md: "30px" },
-        paddingBottom: { lg: "40px", md: "", sm: "40px", xs: "40px" },
+        paddingTop: { lg: "30px", md: "30px", sm: "0px" },
+        paddingBottom: { lg: "40px", md: "0", sm: "0px", xs: "40px" },
         position: "relative",
       }}
       display={"flex"}
@@ -86,17 +84,22 @@ export default function ResponsiveGrid() {
     >
       <Grid
         container
-        spacing={{ xs: 3, sm: 3, md: 3, lg: 4 }}
-        columns={{ xs: 4, sm: 3, md: 24, lg: 24, xl: 24 }}
+        spacing={{ xs: 3, sm: 2, md: 3, lg: 4 }}
+        columns={{ xs: 4, sm: 6, md: 24, lg: 24, xl: 24 }}
         alignItems="center"
         justifyContent="center"
+        sx={{
+          backgroundColor: { lg: " rgba( 10,35,98, 0.5)" },
+          backdropFilter: { lg: " blur(2px)" },
+          borderRadius: { lg: "10px" },
+          border: { lg: " 1px solid rgba( 10,35,98, )" },
+        }}
       >
         {GridData.map((e, index) => (
           <Grid
             sx={{
               display: "flex",
               justifyContent: "center",
-
               height: { md: "180px", lg: "150px" },
             }}
             xs={1}
@@ -107,60 +110,73 @@ export default function ResponsiveGrid() {
             key={index}
           >
             <Box
-              className="border-animation"
               sx={{
-                boxShadow: `0px -8px 16px -5px  ${
-                  !e.click ? "rgba(218,65,32,0.75)" : "rgba(225,230,242,0.75)"
+                boxShadow: `2px -11px 16px -4px   ${
+                  !e.click ? "#eb0537" : "rgba(225,230,242,0.75)"
                 }`,
                 position: "relative",
                 display: "flex",
                 justifyContent: "center",
-                pt: 0.3,
-                borderRadius: { lg: "10px", sm: "10px", xs: "5px" },
-                width: { lg: "70%", md: "100%", sm: "40%", xs: "65%" },
-                height: { lg: "25px", md: "30px", sm: "40px", xs: "12px" },
+                pt: 0.5,
+                borderRadius: { lg: "10px", sm: "8px", xs: "5px" },
+                width: { lg: "65%", md: "75%", sm: "40%", xs: "65%" },
+                height: { lg: "20px", md: "25px", sm: "15px", xs: "12px" },
                 borderLeft: {
-                  xs: `6px solid ${e.click ? "#ff3103" : "#F33D28"}`,
-                  lg: `10px solid ${e.click ? "#ecf5ef" : "#F33D28"}`,
-                  md: `10px solid ${e.click ? "#ecf5ef" : "#F33D28"}`,
+                  xs: `6px solid ${e.click ? "#ecf5ef" : "#eb0537"}`,
+                  sm: `6px solid ${e.click ? "#ecf5ef" : "#eb0537"}`,
+
+                  lg: `10px solid ${e.click ? "#ecf5ef" : "#eb0537"}`,
+                  md: `10px solid ${e.click ? "#ecf5ef" : "#eb0537"}`,
                 },
                 borderTop: {
-                  xs: `6px solid ${e.click ? "#ecf5ef" : "#F33D28"}`,
-                  lg: `10px solid ${e.click ? "#ecf5ef" : "#F33D28"}`,
-                  md: `10px solid ${e.click ? "#ecf5ef" : "#F33D28"}`,
+                  xs: `6px solid ${e.click ? "#ecf5ef" : "#eb0537"}`,
+                  sm: `6px solid ${e.click ? "#ecf5ef" : "#eb0537"}`,
+                  lg: `10px solid ${e.click ? "#ecf5ef" : "#eb0537"}`,
+                  md: `10px solid ${e.click ? "#ecf5ef" : "#eb0537"}`,
                 },
                 borderRight: {
-                  xs: `6px solid ${e.click ? "#ecf5ef" : "#F33D28"}`,
-                  md: `10px solid ${e.click ? "#ecf5ef" : "#F33D28"}`,
-                  lg: `10px solid ${e.click ? "#ecf5ef" : "#F33D28"}`,
+                  xs: `6px solid ${e.click ? "#ecf5ef" : "#eb0537"}`,
+                  sm: `6px solid ${e.click ? "#ecf5ef" : "#eb0537"}`,
+                  md: `10px solid ${e.click ? "#ecf5ef" : "#eb0537"}`,
+                  lg: `10px solid ${e.click ? "#ecf5ef" : "#eb0537"}`,
                 },
-                // backgroundColor: {
-                //   xxs: "red", // theme.breakpoints.up('xxs')
-                //   xs: "orange", // theme.breakpoints.up('xs')
-                //   sm: "yellow", // theme.breakpoints.up('sm')
-                //   md: "green", // theme.breakpoints.up('md')
-                //   lg: "blue", // theme.breakpoints.up('lg')
-                //   xl: "purple", // theme.breakpoints.up('xl')
-                // },
               }}
             >
-              <Box
+              <Button
                 onClick={() => {
                   handleSort(e.id);
                   handleClickOpen();
                 }}
                 sx={{
-                  boxShadow: " rgba(0, 0, 0, 0.80) 0px 25px 20px -20px;",
+                  boxShadow: " rgba(0, 0, 0, 0.80) 0px 20px 20px -10px;",
+                  minWidth: { xs: "90%" },
                   // " rgba(50, 50, 93, 0.5) 0px 130px 160px -2px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px  inset;",
-                  width: { xl: "95%", lg: "80%", md: "95%", xs: "90%" },
+                  width: {
+                    xl: "90%",
+                    lg: "85%",
+                    md: "80%",
+                    xs: "20px",
+                    sm: "10px",
+                  },
+                  padding: "0px",
+                  margin: "0px",
                   height: {
-                    xl: "120px",
-                    lg: "110px",
-                    md: "110px",
+                    xl: "90px",
+                    lg: "85px",
+                    md: "90px",
                     xs: "60px",
-                    sm: "15px",
+                    sm: "50px",
                   },
                   position: "relative",
+                  display: "flex",
+                  // backgroundColor: {
+                  //   xxs: "red", // theme.breakpoints.up('xxs')
+                  //   xs: "orange", // theme.breakpoints.up('xs')
+                  //   sm: "yellow", // theme.breakpoints.up('sm')
+                  //   md: "green", // theme.breakpoints.up('md')
+                  //   lg: "blue", // theme.breakpoints.up('lg')
+                  //   xl: "purple", // theme.breakpoints.up('xl')
+                  // },
                 }}
               >
                 {e.click && (
@@ -171,10 +187,10 @@ export default function ResponsiveGrid() {
                     >
                       Card {e.id}
                     </Typography>
-                    <img src={image} alt="img" className="card-image" />
+                    {/* <img src={image} width={"100%"} alt="img" /> */}
                   </>
                 )}
-              </Box>
+              </Button>
             </Box>
           </Grid>
         ))}

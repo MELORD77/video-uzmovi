@@ -26,18 +26,17 @@ export default function ResponsiveDialog({ open, setOpen }) {
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
       >
-        <Box sx={{ bgcolor: "rgba(245,244,242,255,0.1)" }}>
-          <DialogTitle>{"Use Google's location service?"}</DialogTitle>
-          <DialogContent>
-            <DialogContentText id="alert-dialog-slide-description">
-              Let Google help apps determine location. This means sending
-              anonymous location data to Google, even when no apps are running.
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose}>Disagree</Button>
-            <Button onClick={handleClose}>Agree</Button>
-          </DialogActions>
+        <Box
+          sx={{
+            width: "300px",
+            height: "200px",
+            backgroundColor: { lg: " rgba( 10,35,98, 0.5)" },
+            backdropFilter: { lg: " blur(2px)" },
+            borderRadius: { lg: "10px" },
+            border: { lg: " 1px solid rgba( 10,35,98, )" },
+          }}
+        >
+          <DialogTitle>{"Title?"}</DialogTitle>
         </Box>
       </Dialog>
     </div>

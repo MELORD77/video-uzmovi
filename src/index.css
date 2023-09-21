@@ -3,14 +3,53 @@ body {
   margin: 0;
   /* background-image: linear-gradient(
     to right top,
-    #1b1b1c,
-    #24282b,
-    #576566,
-    #7d8e86,
-    #b1b7a4
+    #10109e,
+    #8e89e5,
+    #d4dfe0,
+    #3628b7,
+    #092e85
   ); */
-  background-image: url("./images/wall3.jpg");
-  background-size: 100%;
+  background: rgb(82, 95, 233);
+  background: -moz-linear-gradient(
+    -45deg,
+    rgb(152, 161, 237) 0%,
+    rgb(219, 189, 172) 51%,
+    rgb(180, 175, 232) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    right bottom,
+    color-stop(0%, rgb(121, 164, 237)),
+    color-stop(51%, rgba(85, 63, 50, 1)),
+    color-stop(100%, rgba(42, 31, 25, 1))
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    rgb(130, 155, 200) 0%,
+    rgb(211, 225, 242) 51%,
+    rgb(45, 89, 210) 100%
+  );
+  background: -o-linear-gradient(
+    -45deg,
+    rgb(150, 172, 211) 0%,
+    rgb(211, 225, 242) 51%,
+    rgb(180, 175, 232) 100%
+  );
+  background: -ms-linear-gradient(
+    -45deg,
+    rgb(76, 46, 228) 0%,
+    rgb(185, 191, 202) 51%,
+    rgb(63, 49, 219) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    rgb(31, 98, 205) 0%,
+    rgba(92, 94, 235, 0.57) 51%,
+    rgb(59, 43, 241) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='red', endColorstr='red', GradientType=1 );
+  /* background-image: url("./images/wall3.jpg");
+  background-size: 100%; */
   /* background: linear-gradient(0deg, #6a85cb 0%, #8075a1 50%, #1a4b77 150%); */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",

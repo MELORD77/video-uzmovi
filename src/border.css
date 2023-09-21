@@ -1,7 +1,7 @@
 .border-animation {
   position: relative;
 }
-
+/* 
 .border-animation:before {
   content: "";
   display: flex;
@@ -23,7 +23,7 @@
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(7px);
   border: 1px solid rgba(255, 255, 255, 0.4);
-}
+} */
 
 @keyframes border-animation {
   0% {
@@ -37,7 +37,7 @@
 }
 .card-image {
   width: 100%;
-  height: 16rem;
+  height: 6rem;
 }
 @media screen and (max-width: 480px) {
   .card-image {
@@ -63,7 +63,7 @@
 @media screen and (max-width: 1200px) {
   .card-image {
     height: 7.3rem;
-    border: 1px solid rgb(57, 52, 56);
+    border: 1px solid rgb(167, 163, 166);
   }
   .alert-Info {
     width: 300px;
@@ -73,4 +73,30 @@
     right: 0;
     background: #000;
   }
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+.boxShadow {
+  box-shadow: -1px 1px 1px #000, 1px -2px 1px #000, 1px -3px 1px #000,
+    1px -4px 1px #000, 1px -5px 1px #000, 1px -6px 1px #000, 1px -7px 1px #000,
+    1px -8px 1px #000, 1px -9px 1px #000, 1px -10px 1px #d67338,
+    1px -18px 6px rgba(16, 16, 16, 0.4), 1px -22px 10px rgba(16, 16, 16, 0.2),
+    1px -25px 35px rgba(16, 16, 16, 0.2), 1px -30px 60px rgba(16, 16, 16, 0.4) !important;
+}
+.imageBg {
+  background-image: url("./images/TABLISA.jpg");
+  background-size: 100% 100%;
+  transform: skewX(4deg) translateX(1px);
 }

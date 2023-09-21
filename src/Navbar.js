@@ -5,14 +5,11 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import styled from "styled-components";
 import "./navbar.css";
 import LogoText from "./Components/LogoText";
 import logo from "./images/Logo1.png";
@@ -23,9 +20,6 @@ function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -56,18 +50,7 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            {/* <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton> */}
             <Menu
-              id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
@@ -92,7 +75,7 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
           <Box sx={{ display: { xs: "none", md: "flex", sm: "flex" }, mr: 1 }}>
-            <img src={logo} alt={"logo"} width={"40px"} />
+            <img src={logo} alt={"logo"} width={"30px"} />
           </Box>
           {/* <Typography
             variant="h5"

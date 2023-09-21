@@ -81,19 +81,20 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
         columns={{ xs: 6, sm: 6, md: 24, lg: 24, xl: 24 }}
         alignItems="center"
         justifyContent="center"
-        sx={{
-          backgroundColor: { lg: " rgba( 255,255,255, 0.2)" },
-          backdropFilter: { lg: " blur(2px)" },
-          borderRadius: { lg: "10px" },
-          border: { lg: " 1px solid rgba( 10,35,98, )" },
-        }}
+        gap={2}
+        sx={{}}
       >
         {GridData.map((e, index) => (
           <Grid
             sx={{
               display: "flex",
               justifyContent: "center",
-              height: { md: "180px", lg: "150px" },
+              m: 1,
+              height: { xs: "70px", md: "180px", lg: "150px" },
+              backgroundColor: " rgba( 255,255,255, 0.2)",
+              backdropFilter: " blur(2px)",
+              borderRadius: "10px",
+              border: " 1px solid rgba( 10,35,98, )",
             }}
             xs={1}
             sm={1}
@@ -110,12 +111,12 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
                 }}
                 sx={{
                   boxShadow: " rgba(250,250,250,0.80)  -0px 15px 20px -10px;",
-                  minWidth: { xs: "90%" },
+                  minWidth: { xs: "85%" },
                   width: {
                     xl: "95%",
                     lg: "95%",
                     md: "90%",
-                    xs: "95%",
+                    xs: "85%",
                     sm: "10px",
                   },
                   padding: "0px",

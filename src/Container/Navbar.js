@@ -105,7 +105,11 @@ function ResponsiveAppBar() {
                 <Avatar alt="U" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
-            <Typography align="center" m={1}>
+            <Typography
+              align="center"
+              m={1}
+              sx={{ display: { xs: "none", md: "flex" } }}
+            >
               User name
             </Typography>
             {/* <Menu

@@ -35,7 +35,14 @@ const GridData = [
   { id: 24, clicked: true },
 ];
 
-export default function ResponsiveGrid({ handleClick, open, setOpen }) {
+export default function ResponsiveGrid({
+  handleClick,
+  open,
+  setOpen,
+  num,
+  alertInfo,
+  setAlert,
+}) {
   const handleSort = (id) => {
     // eslint-disable-next-line array-callback-return
     GridData.filter((e) => e.id === id).forEach((e) => (e.clicked = false));
@@ -53,10 +60,10 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
     <Box
       sx={{
         flexGrow: 1,
-        paddingTop: { lg: "30px", md: "30px", sm: "0px", xs: "30px" },
+        paddingTop: { lg: "30px", md: "30px", sm: "0px", xs: "20px" },
         paddingBottom: { lg: "40px", md: "0", sm: "0px", xs: "40px" },
         position: "relative",
-        height: { xs: "40vh", md: "70vh" },
+        height: "auto",
       }}
       display={"flex"}
       justifyContent={"center"}
@@ -145,7 +152,6 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
 
       <ResponsiveDialog open={open} setOpen={setOpen} />
       {/* {alert && ( */}
-
       {/* )} */}
     </Box>
   );

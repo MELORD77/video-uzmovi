@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 import "../Css/border.css";
-import { Skeleton } from "@mui/material";
+import { Skeleton, Stack } from "@mui/material";
 import "react-chat-elements/dist/main.css";
 
 const GridData = [
@@ -37,10 +37,10 @@ export default function SkeletonPage() {
     <Box
       sx={{
         flexGrow: 1,
-        paddingTop: { lg: "30px", md: "30px", sm: "0px", xs: "30px" },
+        paddingTop: { lg: "0px", md: "30px", sm: "0px", xs: "30px" },
         paddingBottom: { lg: "40px", md: "0", sm: "0px", xs: "40px" },
         position: "relative",
-        height: { xs: "40vh", md: "70vh" },
+        height: "auto",
       }}
       display={"flex"}
       justifyContent={"center"}
@@ -70,12 +70,31 @@ export default function SkeletonPage() {
           >
             <Box sx={{ width: "90%" }}>
               <Skeleton
+                animation="wave"
                 width={"100%"}
-                sx={{ height: { xs: "100px", md: "180px", lg: "240px" } }}
+                sx={{ height: { xs: "100px", md: "180px", lg: "220px" } }}
               />
             </Box>
           </Grid>
         ))}
+        <Stack
+          width={"98%"}
+          direction="row"
+          justifyContent="flex-end"
+          alignItems="flex-start"
+          spacing={2}
+        >
+          <Skeleton
+            animation="wave"
+            width={"20%"}
+            sx={{ height: { xs: "100px", md: "180px", lg: "200px" } }}
+          />
+          <Skeleton
+            animation="wave"
+            width={"10%"}
+            sx={{ height: { xs: "100px", md: "180px", lg: "350px" } }}
+          />
+        </Stack>
       </Grid>
     </Box>
   );

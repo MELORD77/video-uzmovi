@@ -3,13 +3,13 @@ import styled from "styled-components";
 const AnimatedBox = styled.div`
   padding: 0px 0px;
   display: flex;
-  width: 100%;
+  width: 95%;
   height: 220px;
   justify-content: end;
   position: absolute;
   // display: none;
   left: 0;
-  bottom: 5%;
+  bottom: 2%;
 
   // @media screen and (max-width: 768px) {
   //   width: 60%;
@@ -52,8 +52,6 @@ const ImageBox = styled.div`
   padding: 0px 0px;
   width: 150px;
   height: 100%;
-  background-image: url("../images/logo1.jpg");
-  // background-size: 100% 100%;
 `;
 
 export { AnimatedBox, ImageBox };

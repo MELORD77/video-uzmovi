@@ -51,7 +51,6 @@
     1px -25px 35px rgba(16, 16, 16, 0.2), 1px -30px 60px rgba(16, 16, 16, 0.4) !important;
 }
 .imageBg {
-  background-image: url("../images/tablisa.jpg");
   background-size: 100% 100%;
   transform: skewX(5deg) skewY(1deg) translateX(2px);
 }

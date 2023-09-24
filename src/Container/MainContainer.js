@@ -11,16 +11,15 @@ const MainPage = () => {
   const [alertInfo, setAlert] = React.useState(true);
   const [count, setCount] = React.useState(0);
   const [num, setNum] = useState(0);
-  const [maxNum, setMaxNum] = useState(8);
-  const [itemCount, setItemCount] = useState(24);
-  const [dialog, setDialog] = useState(false);
+  const [maxNum] = useState(8);
+
   const [open, setOpen] = React.useState(false);
   const randomNumberInRange = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
   const Timer = () => {
     const timer = setTimeout(() => {
-      setAlert(false);
+      // setAlert(false);
     }, 4000);
 
     return () => {
@@ -41,7 +40,7 @@ const MainPage = () => {
   };
 
   useEffect(() => {
-    handleClick();
+    // handleClick();
     Timer();
   }, []);
 
@@ -51,12 +50,11 @@ const MainPage = () => {
       <Container maxWidth={"lg"}>
         <Box
           sx={{
-            mt: { lg: "20px" },
-            display: "flex",
-            height: "85vh",
+            mt: { lg: "100px", xs: "70px" },
+            display: "block",
+            // height: "45vh",
             position: "relative",
             maxWidth: "100%",
-            border: "1px solid red",
           }}
         >
           {/* <SkeletonPage /> */}
@@ -64,7 +62,17 @@ const MainPage = () => {
             handleClick={handleClick}
             open={open}
             setOpen={setOpen}
+            num={num}
+            alertInfo={alertInfo}
+            setAlert={setAlert}
           />
+        </Box>
+        <Box
+          sx={{
+            height: "180px",
+            position: "relative",
+          }}
+        >
           {
             <AnimatedBoxComponent
               num={num}

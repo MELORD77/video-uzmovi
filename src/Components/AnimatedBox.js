@@ -18,7 +18,13 @@ export default function AnimatedBoxComponent({ alertInfo, num }) {
             date={new Date()}
           />
           <ImageBox>
-            <img src={image} alt="imgPerson" height={"100%"} width={"100%"} />
+            <img
+              src={image}
+              alt="imgPerson"
+              loading="lazy"
+              height={"100%"}
+              width={"100%"}
+            />
           </ImageBox>{" "}
         </Zoom>
       </AnimatedBox>

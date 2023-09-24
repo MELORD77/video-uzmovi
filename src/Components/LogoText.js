@@ -4,7 +4,7 @@ const LogoText = styled.p`
 display:flex
   text-transform: uppercase;
   font-family: Times New Roman ;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 600;
   color: #ffb338;
   letter-spacing: 5px;

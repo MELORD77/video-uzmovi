@@ -1,6 +1,6 @@
-import React from "react";
-import MainPage from "./MainContainer";
+import React, { lazy } from "react";
 
+const MainPage = lazy(() => import("./Container/MainContainer"));
 const routes = [
   {
     path: "*",

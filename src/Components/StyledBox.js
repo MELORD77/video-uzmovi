@@ -6,15 +6,16 @@ const StyledBox = styled.div`
   justify-content: center;
   padding-top: 2px;
   border-top-style: groove;
-  border-radius: 5px 3px;
+  border-radius: 3px 3px;
   width: 65%;
+
   box-shadow: ${({ clicked }) =>
     clicked === "true"
-      ? "-3px -3px 0px 1px rgba(128, 128, 128, 0.3), -3px -3px 1px 2.8px rgba(255, 255, 255, 0.8), -2px 1px 1px 0.5px rgba(128, 128, 128, 0.3) inset, -4px 1px 1px 0px rgba(255, 255, 255, 0.8) inset;"
+      ? "-3.5px -3px 0px 1px rgba(128, 128, 128, 0.3), -4px -3px 1px 2px rgba(255, 255, 255, 0.8), -2px 1px 1px 0.5px rgba(128, 128, 128, 0.3) inset, -4px 1px 1px 0px rgba(255, 255, 255, 0.8) inset;"
       : "-3px -3px 0px 1px rgba(179, 0, 0, 0.9), -3px -3px 0px 2.8px rgba(250, 0, 0, 0.8), -2px 1px 1px 0.5px rgba(179, 0, 0, 0.3) inset, -4px 1px 1px 0px rgba(250, 0, 0, 0.8) inset;"};
 
   @media screen and (max-width: 576px) {
-    width: 80%;
+    width: 60%;
   }
   @media (min-width: 768px) {
     width: 75%;
@@ -34,7 +35,7 @@ const StyledBox = styled.div`
       ${({ clicked }) => (clicked === "true" ? "#fff" : "#eb0537")};
     box-shadow: ${({ clicked }) =>
       clicked === "true"
-        ? "-1px -1px 0px 1px rgba(128, 128, 128, 0.3), -1px -1px 0px 0.8px rgba(255, 255, 255, 0.8), -2px 1px 1px 0.5px rgba(128, 128, 128, 0.3) inset, -4px 1px 1px 0px rgba(255, 255, 255, 0.8) inset;"
+        ? "-2px -1px 0px 1px rgba(128, 128, 128, 0.3), -2px -1px 0px 0.8px rgba(255, 255, 255, 0.5), -2px 1px 1px 0.5px rgba(128, 128, 128, 01) inset, -4px 1px 1px 0px rgba(255, 255, 255, 0.8) inset;"
         : "-3px -3px 0px 1px rgba(179, 0, 0, 0.9), -3px -3px 0px 2.8px rgba(250, 0, 0, 0.8), -2px 1px 1px 0.5px rgba(179, 0, 0, 0.3) inset, -4px 1px 1px 0px rgba(250, 0, 0, 0.8) inset;"};
 
     height: 10px;

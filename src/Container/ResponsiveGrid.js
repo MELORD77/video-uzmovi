@@ -1,11 +1,10 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 import "../Css/border.css";
 import ResponsiveDialog from "../Components/AlertDialog";
 import { Button } from "@mui/material";
 import "react-chat-elements/dist/main.css";
-import image from "../images/tablisa.jpg";
+import image from "../images/card.jpg";
 import StyledBox from "../Components/StyledBox";
 
 const GridData = [
@@ -35,14 +34,7 @@ const GridData = [
   { id: 24, clicked: true },
 ];
 
-export default function ResponsiveGrid({
-  handleClick,
-  open,
-  setOpen,
-  num,
-  alertInfo,
-  setAlert,
-}) {
+export default function ResponsiveGrid({ handleClick, open, setOpen }) {
   const handleSort = (id) => {
     // eslint-disable-next-line array-callback-return
     GridData.filter((e) => e.id === id).forEach((e) => (e.clicked = false));
@@ -57,95 +49,68 @@ export default function ResponsiveGrid({
   };
 
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        paddingTop: { lg: "30px", md: "30px", sm: "0px", xs: "20px" },
-        paddingBottom: { lg: "40px", md: "0", sm: "0px", xs: "40px" },
-        position: "relative",
-        height: "auto",
-      }}
-      display={"flex"}
-      justifyContent={"center"}
-      alignItems={"stretch"}
-    >
+    <>
       <Grid
         container
         width={"100%"}
+        height={"100%"}
         spacing={{ xs: 0, sm: 2, md: 3, lg: 3 }}
         columns={{ xs: 6, sm: 6, md: 24, lg: 24, xl: 24 }}
-        alignItems="center"
-        sx={{ justifyContent: { xs: "center", md: "start", lg: "start" } }}
+        display={"flex"}
+        pt={"30px"}
+        justifyContent={"center"}
+        alignItems="stretch"
       >
         {GridData.map((e, index) => (
           <Grid
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              height: { xs: "70px", md: "180px", lg: "180px" },
-            }}
             xs={1}
             sm={1}
             md={3}
             lg={3}
             xl={3}
             key={index}
+            display={"flex"}
+            justifyContent={"center"}
           >
-            <Box
-              sx={{
-                width: { xs: "100%", md: "100%" },
-                height: { xs: "80%", md: "80%" },
-                backgroundColor: " rgba( 22,17,5, 0.1)",
-                backdropFilter: " blur(1px)",
-                boxShadow: "inset 0px 0px 3px 0.5px #fff ",
-                borderRadius: "10px",
-                display: "flex",
-                justifyContent: "center",
-                pt: { xs: 1, md: 2 },
-                m: { xs: 0.5, md: 0 },
-              }}
-            >
-              <StyledBox clicked={`${e.clicked}`}>
-                <Button
-                  onClick={() => {
-                    handleSort(e.id);
-                    handleClickOpen();
-                  }}
-                  sx={{
-                    boxShadow: " rgba(250,250,250,0.70)  -0px 15px 20px -10px;",
-                    minWidth: { xs: "85%" },
-                    width: {
-                      xl: "95%",
-                      lg: "95%",
-                      md: "90%",
-                      xs: "75%",
-                      sm: "10px",
-                    },
-                    padding: "0px",
-                    margin: "0px",
-                    height: {
-                      xl: "95px",
-                      lg: "95px",
-                      md: "90px",
-                      xs: "40px",
-                      sm: "50px",
-                    },
-                    position: "relative",
-                    display: "flex",
-                  }}
-                >
-                  {e.clicked && (
-                    <img
-                      loading="lazy"
-                      src={image}
-                      width={"100%"}
-                      height={"100%"}
-                      alt="img"
-                    />
-                  )}
-                </Button>
-              </StyledBox>
-            </Box>
+            <StyledBox clicked={`${e.clicked}`}>
+              <Button
+                onClick={() => {
+                  handleSort(e.id);
+                  handleClickOpen();
+                }}
+                sx={{
+                  boxShadow: " rgba(250,250,250,0.70)  -0px 15px 20px -10px;",
+                  minWidth: { xs: "90%" },
+                  width: {
+                    xl: "95%",
+                    lg: "95%",
+                    md: "90%",
+                    xs: "80%",
+                  },
+                  padding: "0px",
+                  margin: "0px",
+                  height: {
+                    xl: "95px",
+                    lg: "95px",
+                    md: "90px",
+                    xs: "45px",
+                    sm: "50px",
+                  },
+                  position: "relative",
+                  display: "flex",
+                }}
+              >
+                {e.clicked && (
+                  <img
+                    loading="lazy"
+                    src={image}
+                    width={"100%"}
+                    height={"100%"}
+                    alt="img"
+                  />
+                )}
+              </Button>
+            </StyledBox>
           </Grid>
         ))}
       </Grid>
@@ -153,6 +118,6 @@ export default function ResponsiveGrid({
       <ResponsiveDialog open={open} setOpen={setOpen} />
       {/* {alert && ( */}
       {/* )} */}
-    </Box>
+    </>
   );
 }

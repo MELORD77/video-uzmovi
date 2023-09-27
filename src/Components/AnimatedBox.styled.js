@@ -3,10 +3,10 @@ import styled from "styled-components";
 const AnimatedBox = styled.div`
   padding: 0px 0px;
   display: flex;
-  width: 95%;
+  width: 100%;
   height: 220px;
   justify-content: end;
-  position: absolute;
+  // position: absolute;
   // display: none;
   left: 0;
   bottom: 2%;

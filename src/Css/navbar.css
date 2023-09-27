@@ -1,7 +1,28 @@
 .Navbar-image {
-  background-image: url("../images/banner.jpg");
-  border-top: 3px solid #ab8f13;
-  border-bottom: 3px solid #ab8f13;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px -15px 12px;
+  /* background-image: url("../images/banner.jpg"); */
+  border: 2px solid #ab8f13;
+  background-color: rgba(8, 1, 61, 0.482) !important;
+  border-radius: 30px;
+  width: 90% !important;
+  margin-top: 10px !important;
+  margin-right: 5% !important;
+  box-shadow: rgba(81, 66, 2, 0.3) 0px 19px 38px,
+    rgba(199, 153, 14, 0.22) 0px -15px 12px !important;
+}
+.navbar-container {
+  background-color: rgb(138, 130, 130, 0.5);
+  opacity: 0 - 1;
+  border-radius: 50px;
+}
+@media (max-width: 767px) {
+  .Navbar-image {
+    background-color: rgba(8, 1, 61, 0.482) !important;
+    /* background-image: url("../images/banner.jpg"); */
+    border: 0px solid #ab8f13;
+    margin: 0px !important;
+    border-radius: 0px;
+    width: 100% !important;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px -15px 12px;
+  }
 }

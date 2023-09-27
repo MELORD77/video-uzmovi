@@ -3,13 +3,18 @@ body {
   margin: 0;
   /* background-image: linear-gradient(
     to right top,
-    #10109e,
-    #8e89e5,
-    #d4dfe0,
-    #3628b7,
-    #092e85
+    #e5a213,
+    #211e19bd,
+    #6071f1,
+    #f9fafb,
+    #f9fafb,
+    #f9fafb,
+    #5f5fef,
+    #211e1985,
+    #e5a213
   ); */
-  background: rgb(82, 95, 233);
+  background: rgba(8, 1, 61, 0.982);
+  /* background: rgb(82, 95, 233);
   background: -moz-linear-gradient(
     -45deg,
     rgb(211, 188, 11) 0%,
@@ -46,8 +51,7 @@ body {
     rgb(31, 98, 205) 0%,
     rgba(92, 94, 235, 0.57) 51%,
     rgb(152, 123, 6) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='red', endColorstr='red', GradientType=1 );
+  ); */
   /* background-image: url("./images/wall3.jpg");
   background-size: 100%; */
   /* background: linear-gradient(0deg, #6a85cb 0%, #8075a1 50%, #1a4b77 150%); */

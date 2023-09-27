@@ -1,0 +1,24 @@
+.giftBox {
+  padding: auto;
+  margin: auto;
+  display: flex;
+  width: 220px;
+  border-radius: 50%;
+  height: 220px;
+  justify-content: end;
+  margin-top: -100px;
+  background-color: #f0a605e4;
+  animation: giftBox-animation 2s infinite;
+  scroll-snap-type: y mandatory;
+}
+@keyframes giftBox-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(80, 61, 2, 0.629);
+    background: rgba(80, 61, 3, 0.629);
+  }
+
+  100% {
+    box-shadow: 0 0 0 20px rgba(193, 133, 3, 0);
+    background: rgba(0, 0, 0, 0);
+  }
+}

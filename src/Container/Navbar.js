@@ -23,8 +23,8 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="fixed" className="Navbar-image">
-      <Container maxWidth="xl">
+    <AppBar position={"fixed"} className="Navbar-image">
+      <Container maxWidth="xxl">
         <Toolbar disableGutters>
           <Box
             sx={{
@@ -112,28 +112,6 @@ function ResponsiveAppBar() {
             >
               User name
             </Typography>
-            {/* <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu> */}
           </Box>
         </Toolbar>
       </Container>

@@ -4,13 +4,13 @@ import { Zoom } from "react-reveal";
 import { MessageBox } from "react-chat-elements";
 import { Box } from "@mui/material";
 import image from "../images/alertImage.png";
-export default function AnimatedBoxComponent({ alertInfo, num }) {
+export default function AnimatedBoxComponent({ alertInfo, num, setLoading }) {
   return (
     <Box display={alertInfo ? "block" : "none"}>
       <AnimatedBox>
         <Zoom opposite>
           <MessageBox
-            styles={{ width: "200px" }}
+            styles={{ width: "50%" }}
             position="right"
             title="Iltimos"
             type="text"
@@ -19,6 +19,9 @@ export default function AnimatedBoxComponent({ alertInfo, num }) {
           />
           <ImageBox>
             <img
+              onLoad={() => {
+                // setLoading(false);
+              }}
               src={image}
               alt="imgPerson"
               loading="lazy"

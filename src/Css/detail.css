@@ -1,0 +1,65 @@
+.detail_box {
+  color: #dfe0e2;
+  /* background: rgba(37, 38, 43, 0.572); */
+  border-radius: 20px;
+  padding: 2px;
+  padding-inline-start: 15px;
+}
+
+.detail_box h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 900;
+  transform: scaleY(10);
+  transform: rotateX(20deg);
+}
+
+.detail_box p {
+  color: rgb(245, 245, 4);
+  margin-top: 20px;
+  max-width: 400px;
+  text-shadow: 2px 5px 8px #a6aff0;
+}
+
+.detail_box a {
+  display: inline-block;
+  padding: 10px 40px;
+  background-color: #4b208c;
+  color: #ffffff;
+  border-radius: 35px;
+  margin-top: 35px;
+}
+
+/* CSS */
+.button-91 {
+  color: #fff;
+  padding: 12px 20px;
+  background-color: #dcb518;
+  background-image: radial-gradient(
+      93% 87% at 87% 89%,
+      rgba(0, 0, 0, 0.23) 0%,
+      transparent 86.18%
+    ),
+    radial-gradient(
+      66% 66% at 26% 20%,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0) 69.79%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25),
+    inset 0px 3px 9px rgba(255, 255, 255, 0.3),
+    inset 0px 1px 1px rgba(255, 255, 255, 0.6),
+    inset 0px -8px 36px rgba(0, 0, 0, 0.3),
+    inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  cursor: pointer;
+}

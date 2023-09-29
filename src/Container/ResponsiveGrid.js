@@ -6,6 +6,7 @@ import { Button } from "@mui/material";
 import "react-chat-elements/dist/main.css";
 import image from "../images/card.jpg";
 import StyledBox from "../Components/StyledBox";
+import ResponsiveAppBar from "./Navbar";
 
 const GridData = [
   { id: 1, clicked: true },

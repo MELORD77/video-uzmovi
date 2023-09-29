@@ -2,21 +2,24 @@ import React from "react";
 import "../Css/video.css";
 import "../Css/giftBox.css";
 import "../Css/scroll.css";
+import "../Css/cardBody.css";
 import { Box, Grid } from "@mui/material";
 import { useWindowSize } from "@uidotdev/usehooks";
-import imageOil from "../images/Oil.jpg";
+import imageOil from "../images/fon.jpg";
 import gift from "../images/gift.png";
 import YouTube from "react-youtube";
 import { Fade } from "react-awesome-reveal";
 import TitleAnimationText from "../Components/TitleAnimationText";
 import MarqueeComponent from "../Components/Marquee";
+import ResponsiveGrid from "./ResponsiveGrid";
+import { NavLink } from "react-router-dom";
 const ResponsiveAppBar = React.lazy(() => import("./Navbar"));
 
 const MainPage = () => {
   const size = useWindowSize();
   console.log(size);
   console.log(`${size.height - 200}px`);
-  const mainHeight = size.height === null ? "78vh" : ` ${size.height - 100}px`;
+  const mainHeight = size.height === null ? "78vh" : ` ${size.height - 200}px`;
   const animationStyles = {
     "@keyframes myAnim": {
       "0%": {
@@ -35,6 +38,7 @@ const MainPage = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    // filter: "blur(3px)",
   };
 
   return (
@@ -43,24 +47,32 @@ const MainPage = () => {
       <Box height={mainHeight} sx={animationStyles}>
         <TitleAnimationText />
       </Box>
-      <Box className="giftBox">
+      <Box
+        component={NavLink}
+        to={"/gift"}
+        className="giftBox"
+        onClick={() => {
+          console.log("click");
+        }}
+      >
         <img
           alt="gift"
           width={"100%"}
           height={"100%"}
           src={gift}
           loading="lazy"
+          style={{ filter: "brightness(4)" }}
         />
       </Box>
-      <Box></Box>
+      <div className="card-body"></div>
       <Box
         className={"scroll-stop"}
         sx={{
           height: { xs: "45%", sm: 2, md: "40%", lg: "60vh" },
           position: "relative",
-          backgroundAttachment: "fixed",
+          // backgroundAttachment: "fixed",
           boxShadow: "1px 1px 5px 1px rgb(128,128,128,1)",
-          pt: "10px",
+          pt: "70px",
           mt: "10px",
           mb: "10px",
         }}

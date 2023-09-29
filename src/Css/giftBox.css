@@ -8,17 +8,28 @@
   justify-content: end;
   margin-top: -100px;
   background-color: #f0a605e4;
+  z-index: 2;
   animation: giftBox-animation 2s infinite;
   scroll-snap-type: y mandatory;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  text-align: center;
 }
 @keyframes giftBox-animation {
   0% {
-    box-shadow: 0 0 0 0px rgba(80, 61, 2, 0.629);
-    background: rgba(80, 61, 3, 0.629);
+    box-shadow: 0 0 0 0px rgba(33, 118, 255, 0.773);
+    background: rgba(33, 118, 255, 0.773);
   }
 
   100% {
-    box-shadow: 0 0 0 20px rgba(193, 133, 3, 0);
-    background: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 20px rgba(33, 118, 255, 0);
+    background: rgba(33, 118, 255, 0);
   }
 }

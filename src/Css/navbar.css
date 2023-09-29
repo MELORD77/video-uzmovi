@@ -1,13 +1,18 @@
 .Navbar-image {
-  /* background-image: url("../images/banner.jpg"); */
-  border: 2px solid #ab8f13;
-  background-color: rgba(8, 1, 61, 0.482) !important;
-  border-radius: 30px;
-  width: 90% !important;
-  margin-top: 10px !important;
-  margin-right: 5% !important;
-  box-shadow: rgba(81, 66, 2, 0.3) 0px 19px 38px,
-    rgba(199, 153, 14, 0.22) 0px -15px 12px !important;
+  background-image: url("../images/banner.jpg");
+  /* background-color: rgba(33, 118, 255, 0.773) !important; */
+  /* background-color: #31239c !important; */
+  /* background-color: #c5c2da !important; */
+
+  border-radius: 15px;
+  width: 66% !important;
+  margin-top: 15px !important;
+  margin-right: 17% !important;
+  box-shadow: rgba(2, 30, 81, 0.3) 0px 19px 38px,
+    rgba(32, 14, 199, 0.22) 0px -15px 12px !important;
+}
+.toolbar {
+  min-height: 50px !important;
 }
 .navbar-container {
   background-color: rgb(138, 130, 130, 0.5);
@@ -16,7 +21,7 @@
 }
 @media (max-width: 767px) {
   .Navbar-image {
-    background-color: rgba(8, 1, 61, 0.482) !important;
+    background-color: rgba(0, 51, 255, 0.672) !important;
     /* background-image: url("../images/banner.jpg"); */
     border: 0px solid #ab8f13;
     margin: 0px !important;

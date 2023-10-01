@@ -48,9 +48,10 @@ export default function TitleAnimationText() {
             <Avatar
               variant="square"
               sx={{
-                width: "300px",
-                height: "300px",
-                boxShadow: "2px 0 10px 10px #fff",
+                width: "150px",
+                height: "200px",
+                borderRadius: "10px",
+                boxShadow: "1px 1px 10px 0 rgba(0, 0, 0, 0.1)",
               }}
               alt="image1"
               src={image}

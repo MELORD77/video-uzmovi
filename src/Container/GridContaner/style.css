@@ -1,0 +1,9 @@
+.grid-container {
+  padding: auto !important;
+  margin-top: 150px;
+  border: 1px solid red;
+  display: table-cell;
+}
+.grid-item {
+  height: 80vh;
+}

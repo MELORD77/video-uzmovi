@@ -73,52 +73,20 @@ const MainPage = () => {
           justifyContent={"space-evenly"}
         >
           <Grid item xs={12} md={6} lg={4} xl={4}>
-            <Fade direction="up">
-              <YouTube
-                videoId="yq4JuYcs69w"
-                opts={{
-                  width: "100%",
-                  position: "relative",
-                  overflow: "hidden",
-                  paddingTop: "56.25%",
-                  // playerVars: {
-                  //   autoplay: 1,
-                  // },
-                }}
-                onReady={() => {
-                  console.log("ready");
-                }}
-              />
-            </Fade>
+            <Fade direction="up"></Fade>
           </Grid>
           <Grid item xs={12} md={6} lg={4} xl={4}>
-            <Fade direction="up">
-              <YouTube
-                videoId="yq4JuYcs69w"
-                opts={{
-                  width: "100%",
-                  position: "relative",
-                  overflow: "hidden",
-                  paddingTop: "56.25%",
-                  // playerVars: {
-                  //   autoplay: 1,
-                  // },
-                }}
-                onReady={() => {
-                  console.log("ready");
-                }}
-              />
-            </Fade>
+            <Fade direction="up"></Fade>
           </Grid>
         </Grid>
       </div>
       <Box
-        className={"scroll-stop"}
+        // className={"scroll-stop"}
         sx={{
           height: { xs: "45%", sm: 2, md: "40%", lg: "60vh" },
           position: "relative",
           // backgroundAttachment: "fixed",
-          boxShadow: "1px 1px 5px 1px rgb(128,128,128,1)",
+          // boxShadow: "1px 1px 5px 1px rgb(128,128,128,1)",
           pt: "70px",
           mt: "10px",
           mb: "10px",

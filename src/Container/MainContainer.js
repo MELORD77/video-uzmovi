@@ -19,7 +19,7 @@ const MainPage = () => {
   const size = useWindowSize();
   console.log(size);
   console.log(`${size.height - 200}px`);
-  const mainHeight = size.height === null ? "78vh" : ` ${size.height - 200}px`;
+  const mainHeight = size.height === null ? "78vh" : ` ${size.height - 100}px`;
   const animationStyles = {
     "@keyframes myAnim": {
       "0%": {

@@ -75,7 +75,7 @@ function ResponsiveAppBar() {
             to={"/main"}
             sx={{ display: { xs: "none", md: "flex", sm: "flex" }, mr: 8 }}
           >
-            <img src={logo} alt={"logo"} width={"30px"} />
+            <img src={logo} alt={"logo"} width={"50px"} />
           </Box>
           <Box
             sx={{

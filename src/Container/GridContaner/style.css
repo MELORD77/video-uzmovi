@@ -1,9 +1,13 @@
 .grid-container {
-  padding: auto !important;
-  margin-top: 150px;
-  border: 1px solid red;
+  /* padding: auto !important; */
+  /* min-height: 100%; */
+  width: 90%;
+  margin-top: 120px;
+  display: flex;
+  justify-content: start;
+  /* border: 1px solid red; */
   display: table-cell;
 }
 .grid-item {
-  height: 70vh;
+  height: 75vh;
 }

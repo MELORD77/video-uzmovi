@@ -11,14 +11,12 @@ import YouTube from "react-youtube";
 import { Fade } from "react-awesome-reveal";
 import TitleAnimationText from "../Components/TitleAnimationText";
 import MarqueeComponent from "../Components/Marquee";
-import ResponsiveGrid from "./ResponsiveGrid";
 import { NavLink } from "react-router-dom";
 const ResponsiveAppBar = React.lazy(() => import("./Navbar"));
 
 const MainPage = () => {
   const size = useWindowSize();
-  console.log(size);
-  console.log(`${size.height - 200}px`);
+
   const mainHeight = size.height === null ? "78vh" : ` ${size.height - 100}px`;
   const animationStyles = {
     "@keyframes myAnim": {

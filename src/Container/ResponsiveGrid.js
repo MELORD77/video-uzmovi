@@ -6,7 +6,6 @@ import { Button } from "@mui/material";
 import "react-chat-elements/dist/main.css";
 import image from "../images/card.jpg";
 import StyledBox from "../Components/StyledBox";
-import ResponsiveAppBar from "./Navbar";
 
 const GridData = [
   { id: 1, clicked: true },
@@ -54,13 +53,17 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
       <Grid
         container
         // width={"100%"}
-        // height={"100%"}
+        // ml={"20px"}
+        height={{ xs: "50%", md: "70%", lg: "90%" }}
         spacing={{ xs: 0, sm: 2, md: 3, lg: 3 }}
         columns={{ xs: 6, sm: 6, md: 24, lg: 24, xl: 24 }}
         display={"flex"}
-        pt={"30px"}
+        p={"30px"}
         justifyContent={"center"}
         alignItems="stretch"
+        borderRadius={"10px"}
+        bgcolor={"rgb(35, 51, 222,0.50)"}
+        boxShadow={" #000 0px 0px 20px 10px inset;"}
       >
         {GridData.map((e, index) => (
           <Grid
@@ -72,9 +75,9 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
             xl={3}
             key={index}
             display={"flex"}
-            sx={{ border: "1px solid red" }}
+            // sx={{ border: "1px solid red" }}
             justifyContent={"center"}
-            minHeight={110}
+            minHeight={80}
           >
             <StyledBox clicked={`${e.clicked}`}>
               <Button
@@ -94,9 +97,9 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
                   padding: "0px",
                   margin: "0px",
                   height: {
-                    // xl: "100%",
-                    lg: "80px",
-                    md: "80px",
+                    xl: "90px",
+                    lg: "70px",
+                    md: "70px",
                     xs: "45px",
                     sm: "50px",
                   },

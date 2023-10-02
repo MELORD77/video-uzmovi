@@ -53,8 +53,8 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
     <>
       <Grid
         container
-        width={"100%"}
-        height={"100%"}
+        // width={"100%"}
+        // height={"100%"}
         spacing={{ xs: 0, sm: 2, md: 3, lg: 3 }}
         columns={{ xs: 6, sm: 6, md: 24, lg: 24, xl: 24 }}
         display={"flex"}
@@ -74,6 +74,7 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
             display={"flex"}
             sx={{ border: "1px solid red" }}
             justifyContent={"center"}
+            minHeight={110}
           >
             <StyledBox clicked={`${e.clicked}`}>
               <Button
@@ -93,9 +94,9 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
                   padding: "0px",
                   margin: "0px",
                   height: {
-                    xl: "100%",
-                    lg: "85px",
-                    md: "90px",
+                    // xl: "100%",
+                    lg: "80px",
+                    md: "80px",
                     xs: "45px",
                     sm: "50px",
                   },

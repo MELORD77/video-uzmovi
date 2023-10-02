@@ -64,6 +64,7 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
       >
         {GridData.map((e, index) => (
           <Grid
+            item
             xs={1}
             sm={1}
             md={3}
@@ -71,6 +72,7 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
             xl={3}
             key={index}
             display={"flex"}
+            sx={{ border: "1px solid red" }}
             justifyContent={"center"}
           >
             <StyledBox clicked={`${e.clicked}`}>
@@ -91,8 +93,8 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
                   padding: "0px",
                   margin: "0px",
                   height: {
-                    xl: "95px",
-                    lg: "95px",
+                    xl: "100%",
+                    lg: "85px",
                     md: "90px",
                     xs: "45px",
                     sm: "50px",

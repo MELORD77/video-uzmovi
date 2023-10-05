@@ -22,7 +22,7 @@ export default function GiftContainer() {
             <ResponsiveGrid />
           </Grid>
           <Grid item xs={12} md={4} className="grid-item">
-            <Box sx={{ width: "100%", height: "80%", bgcolor: "red" }}></Box>{" "}
+            <Box className="image-box"></Box>{" "}
           </Grid>
         </Grid>
       </Container>

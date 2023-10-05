@@ -61,9 +61,6 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
         p={"30px"}
         justifyContent={"center"}
         alignItems="stretch"
-        borderRadius={"10px"}
-        bgcolor={"rgb(35, 51, 222,0.50)"}
-        boxShadow={" #000 0px 0px 20px 10px inset;"}
       >
         {GridData.map((e, index) => (
           <Grid

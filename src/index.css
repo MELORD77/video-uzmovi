@@ -13,7 +13,9 @@ body {
     #211e1985,
     #e5a213
   ); */
-  background: #3b2ca9;
+  /* background: #ebe7e0f8; */
+
+  background-image: linear-gradient(to right, #d3cce3, #e9e4f0);
 
   /* 
   background: -moz-linear-gradient(

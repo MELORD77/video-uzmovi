@@ -1,6 +1,7 @@
 import * as React from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import "../Css/border.css";
+
 import ResponsiveDialog from "../Components/AlertDialog";
 import { Button } from "@mui/material";
 import "react-chat-elements/dist/main.css";
@@ -54,6 +55,7 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
         container
         // width={"100%"}
         // ml={"20px"}
+        className="grid-container-box"
         height={{ xs: "50%", md: "70%", lg: "90%" }}
         spacing={{ xs: 0, sm: 2, md: 3, lg: 3 }}
         columns={{ xs: 6, sm: 6, md: 24, lg: 24, xl: 24 }}

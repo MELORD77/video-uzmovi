@@ -8,7 +8,7 @@
   /* border: 1px solid red; */
   border-radius: 20px;
   /* background-color: grey; */
-  box-shadow: #000 0px 0px 20px 10px inset;
+  /* box-shadow: #000 0px 0px 20px 10px inset; */
   display: table-cell;
 }
 .grid-item {
@@ -16,10 +16,11 @@
 }
 .image-box {
   width: 100%;
-  height: 86%;
-  box-shadow: #000 0px 0px 20px 10px inset;
+  height: 90%;
   border-radius: 20px;
+  box-shadow: #2f1e6d 0 0 10px 1px;
 
   margin: 0px;
-  margin-top: 0px;
+  margin-top: -10px;
+  margin-left: 20px;
 }

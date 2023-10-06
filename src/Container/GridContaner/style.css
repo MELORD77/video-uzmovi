@@ -1,24 +1,26 @@
 .grid-container {
   /* padding: auto !important; */
   /* min-height: 100%; */
-  width: 90%;
-  margin-top: 120px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  margin-top: 80px;
   display: flex;
-  justify-content: start;
-  /* border: 1px solid red; */
-  border-radius: 20px;
-  /* background-color: grey; */
+  justify-content: center;
+  height: fit-content;
+  min-height: 75vh;
   /* box-shadow: #000 0px 0px 20px 10px inset; */
-  display: table-cell;
+  /* display: table-cell; */
 }
 .grid-item {
-  height: 75vh;
+  padding: 0;
+  /* height: 85vh; */
 }
 .image-box {
   width: 100%;
   height: 90%;
-  border-radius: 20px;
-  box-shadow: #2f1e6d 0 0 10px 1px;
+  /* border-radius: 20px; */
+  /* box-shadow: #2f1e6d 0 0 10px 1px; */
 
   margin: 0px;
   margin-top: -10px;

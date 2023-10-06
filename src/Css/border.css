@@ -55,10 +55,10 @@
   transform: skewX(5deg) skewY(1deg) translateX(2px);
 }
 .grid-container-box {
-  border-radius: 20px;
-  box-shadow: #2f1e6d 0 0 10px 1px;
-  background: rgb(190, 186, 222);
-  background: linear-gradient(
+  /* border-radius: 20px; */
+  /* box-shadow: #000 5px 5px 10px 0.1px; */
+  /* background: rgb(190, 186, 222); */
+  /* background: linear-gradient(
     0deg,
     rgba(190, 186, 222, 1) 0%,
     rgba(187, 155, 118, 0.746) 26%,
@@ -68,5 +68,5 @@
     rgba(223, 206, 194, 1) 64%,
     rgb(187, 163, 137) 76%,
     rgba(205, 205, 240, 1) 100%
-  );
+  ); */
 }

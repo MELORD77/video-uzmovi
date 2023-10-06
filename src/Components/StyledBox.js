@@ -45,20 +45,20 @@ const StyledBox = styled.div`
       ${({ clicked }) => (clicked === "true" ? "#fff" : "#eb0537")};
   }
   @media (min-width: 1200px) {
-    height: 20px;
-    border-left: 9px solid
+    height: 15px;
+    border-left: 7px solid
       ${({ clicked }) => (clicked === "true" ? "#fff" : "#eb0537")};
-    border-top: 9px solid
+    border-top: 7px solid
       ${({ clicked }) => (clicked === "true" ? "#fff" : "#eb0537")};
-    border-right: 9px solid
+    border-right: 7px solid
       ${({ clicked }) => (clicked === "true" ? "#fff" : "#eb0537")};
   }
 
-  border-left: 9px solid
+  border-left: 7px solid
     ${({ clicked }) => (clicked === "true" ? "#fff" : "#eb0537")};
-  border-top: 9px solid
+  border-top: 7px solid
     ${({ clicked }) => (clicked === "true" ? "#fff" : "#eb0537")};
-  border-right: 9px solid
+  border-right: 7px solid
     ${({ clicked }) => (clicked === "true" ? "#fff" : "#eb0537")};
 `;
 export default StyledBox;

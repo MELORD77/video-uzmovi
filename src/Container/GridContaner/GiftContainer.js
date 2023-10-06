@@ -1,20 +1,20 @@
 import React from "react";
 import { Box, Container, Grid } from "@mui/material";
 import ResponsiveGrid from "../ResponsiveGrid";
-import ResponsiveAppBar from "../Navbar";
 import "./style.css";
 import { useWindowSize } from "@uidotdev/usehooks";
+import ButtonAppBar from "../../Components/appBar";
 
 export default function GiftContainer() {
   const size = useWindowSize();
 
-  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 150}px`;
+  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 205}px`;
   return (
     <div>
-      <ResponsiveAppBar />
+      <ButtonAppBar />
       <Container
         sx={{
-          maxWidth: { xs: "xxl", md: "lg", lg: "xl" },
+          maxWidth: { xs: "xxl", md: "xl", lg: "xl" },
         }}
       >
         <Grid container className="grid-container" height={mainHeight}>
@@ -26,6 +26,15 @@ export default function GiftContainer() {
           </Grid>
         </Grid>
       </Container>
+      <Box
+        sx={{
+          width: "100%",
+          height: "50px",
+          borderTop: "1px solid gray",
+          position: "absolute",
+          bottom: 0,
+        }}
+      ></Box>
     </div>
   );
 }

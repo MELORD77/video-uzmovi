@@ -42,7 +42,7 @@ function ResponsiveAppBar() {
               },
             }}
           >
-            <img src={logo} alt={"logo"} width={"40px"} />
+            <img src={logo} alt={"logo"} width={"35px"} />
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -75,7 +75,7 @@ function ResponsiveAppBar() {
             to={"/main"}
             sx={{ display: { xs: "none", md: "flex", sm: "flex" }, mr: 8 }}
           >
-            <img src={logo} alt={"logo"} width={"50px"} />
+            <img src={logo} alt={"logo"} width={"40px"} />
           </Box>
           <Box
             sx={{
@@ -88,7 +88,9 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Grid container justifyContent={"center"}>
               <Grid item>
-                <LogoText>MUSOFIR</LogoText>
+                {/* <LogoText>MUSOFIR</LogoText> */}
+
+                <Typography> MUSOFIR </Typography>
               </Grid>
             </Grid>
           </Box>

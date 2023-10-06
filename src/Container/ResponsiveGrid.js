@@ -56,11 +56,13 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
         // width={"100%"}
         // ml={"20px"}
         className="grid-container-box"
-        height={{ xs: "50%", md: "70%", lg: "90%" }}
-        spacing={{ xs: 0, sm: 2, md: 3, lg: 3 }}
+        height={{ xs: "50%", sm: "40%", md: "70%", lg: "90%" }}
+        spacing={{ xs: 0, sm: 0, md: 2, lg: 3 }}
+        rowSpacing={{ xs: 0, sm: 1, md: 10, lg: 3 }}
         columns={{ xs: 6, sm: 6, md: 24, lg: 24, xl: 24 }}
         display={"flex"}
-        p={"30px"}
+        sx={{ py: { xs: "5px", sm: "0px", md: "0px", lg: "20px" } }}
+        // p={{ xs: "5px", sm: "0px", md: "20px" }}
         justifyContent={"center"}
         alignItems="stretch"
       >
@@ -91,19 +93,21 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
                     xl: "95%",
                     lg: "95%",
                     md: "90%",
+                    sm: "70%",
                     xs: "80%",
                   },
                   padding: "0px",
                   margin: "0px",
+                  // height: "100%",
                   height: {
                     xl: "90px",
                     lg: "70px",
-                    md: "70px",
+                    md: "50px",
                     xs: "45px",
                     sm: "50px",
                   },
-                  position: "relative",
-                  display: "flex",
+                  // position: "relative",
+                  // display: "flex",
                 }}
               >
                 {e.clicked && (

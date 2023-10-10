@@ -5,14 +5,14 @@ const AnimatedBox = styled.div`
   display: flex;
   width: 100%;
   height: 220px;
-  justify-content: end;
+  justify-content: center;
   // position: absolute;
   // display: none;
   left: 0;
   bottom: 2%;
 
   // @media screen and (max-width: 768px) {
-  //   width: 60%;
+  //   width: 100%;
   //   height: 150px;
   //   position: absolute;
   //   display: flex;

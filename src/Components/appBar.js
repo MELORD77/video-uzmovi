@@ -21,7 +21,7 @@ export default function ButtonAppBar() {
       height: { xs: "70px", md: "55px" },
       display: "flex",
       alignContent: "center",
-      backgroundColor: "rgba(0, 51, 255, 0.672)!important", // Set the desired minimum height here
+      backgroundColor: "#31239c!important", // Set the desired minimum height here
     },
     toolbar: {
       minHeight: "35px",

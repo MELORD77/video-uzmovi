@@ -4,7 +4,6 @@ import ResponsiveGrid from "../ResponsiveGrid";
 import "./style.css";
 import { useWindowSize } from "@uidotdev/usehooks";
 import ButtonAppBar from "../../Components/appBar";
-import AnimatedBoxComponent from "../../Components/AnimatedBox";
 import { MessageBox } from "react-chat-elements";
 import { AnimatedBox, ImageBox } from "../../Components/AnimatedBox.styled";
 import image from "../../images/alertImage.png";
@@ -12,7 +11,7 @@ import image from "../../images/alertImage.png";
 export default function GiftContainer() {
   const size = useWindowSize();
 
-  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 205}px`;
+  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 150}px`;
   return (
     <div>
       <ButtonAppBar />
@@ -29,7 +28,7 @@ export default function GiftContainer() {
             <Box>
               <AnimatedBox>
                 <MessageBox
-                  styles={{ width: "50%" }}
+                  styles={{ width: "60%" }}
                   position="right"
                   title="Iltimos"
                   type="text"

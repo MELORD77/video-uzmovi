@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import "../Css/detail.css";
-import { Avatar, Grid, Typography } from "@mui/material";
-import image from "../images/card.jpg";
+import { Grid } from "@mui/material";
+import { NavLink } from "react-router-dom";
 export default function TitleAnimationText() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
@@ -29,11 +29,10 @@ export default function TitleAnimationText() {
         <Grid item>
           <div className="detail_box">
             <h1>BORIGA BARAKA</h1>
-            <h1>Обманчиво простая, невероятно интересная</h1>
-            <button className="button-91" role="button">
-              {" "}
-              Играть сейчас
-            </button>
+            <p>Обманчиво простая, невероятно интересная</p>
+          </div>
+          <div component={NavLink} to={"/gift"} className="button-box">
+            <button className="button"> Играть сейчас</button>
           </div>
         </Grid>
       </Grid>

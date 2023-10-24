@@ -17,7 +17,7 @@ const ResponsiveAppBar = React.lazy(() => import("./Navbar"));
 const MainPage = () => {
   const size = useWindowSize();
 
-  const mainHeight = size.height === null ? "78vh" : ` ${size.height - 10}px`;
+  const mainHeight = size.height === null ? "77vh" : ` ${size.height - 0}px`;
   const animationStyles = {
     "@keyframes myAnim": {
       "0%": {

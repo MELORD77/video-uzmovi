@@ -1,17 +1,16 @@
 .Navbar-image {
   /* background-image: url("../images/banner.jpg"); */
-  background-color: #31239c !important;
+  background-color: #2f2496 !important;
   /* background-color: #c5c2da !important; */
 
-  /* border-radius: 15px; */
-  /* width: 66% !important; */
-  /* margin-top: 15px !important; */
-  /* margin-right: 17% !important; */
-  box-shadow: rgba(2, 30, 81, 0.3) 0px 19px 38px,
-    rgba(32, 14, 199, 0.22) 0px -15px 12px !important;
+  border-radius: 10px;
+  width: 70% !important;
+  margin-top: 15px !important;
+  margin-right: 15% !important;
+  box-shadow: #021e514d 0px 19px 38px, rgba(32, 14, 199, 0.22) 0px -15px 12px !important;
 }
 .toolbar {
-  min-height: 50px !important;
+  min-height: 60px !important;
 }
 .navbar-container {
   background-color: rgb(138, 130, 130, 0.5);

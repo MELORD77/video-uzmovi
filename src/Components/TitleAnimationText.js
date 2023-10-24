@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import "../Css/detail.css";
-import { Avatar, Grid } from "@mui/material";
+import { Avatar, Grid, Typography } from "@mui/material";
 import image from "../images/card.jpg";
 export default function TitleAnimationText() {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,34 +28,12 @@ export default function TitleAnimationText() {
       >
         <Grid item>
           <div className="detail_box">
-            <h1>
-              Electrical <br />
-              Service <br />
-              Providers
-            </h1>
-            <p>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem
-            </p>
+            <h1>BORIGA BARAKA</h1>
+            <h1>Обманчиво простая, невероятно интересная</h1>
             <button className="button-91" role="button">
-              Button 91
+              {" "}
+              Играть сейчас
             </button>
-          </div>
-        </Grid>
-        <Grid item>
-          <div className="detail_box">
-            <Avatar
-              variant="square"
-              sx={{
-                width: "150px",
-                height: "200px",
-                borderRadius: "10px",
-                boxShadow: "1px 1px 10px 0 rgba(0, 0, 0, 0.1)",
-              }}
-              alt="image1"
-              src={image}
-            />
           </div>
         </Grid>
       </Grid>

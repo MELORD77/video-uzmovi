@@ -5,7 +5,7 @@ import "../Css/scroll.css";
 import "../Css/cardBody.css";
 import { Box, Grid } from "@mui/material";
 import { useWindowSize } from "@uidotdev/usehooks";
-import imageOil from "../images/fon2.jpg";
+import imageOil from "../images/Rectangle10.png";
 import gift from "../images/gift.png";
 import YouTube from "react-youtube";
 import { Fade } from "react-awesome-reveal";
@@ -17,7 +17,7 @@ const ResponsiveAppBar = React.lazy(() => import("./Navbar"));
 const MainPage = () => {
   const size = useWindowSize();
 
-  const mainHeight = size.height === null ? "78vh" : ` ${size.height - 100}px`;
+  const mainHeight = size.height === null ? "78vh" : ` ${size.height - 10}px`;
   const animationStyles = {
     "@keyframes myAnim": {
       "0%": {
@@ -45,7 +45,7 @@ const MainPage = () => {
       <Box height={mainHeight} sx={animationStyles}>
         <TitleAnimationText />
       </Box>
-      <Box
+      {/* <Box
         component={NavLink}
         to={"/gift"}
         className="giftBox"
@@ -61,8 +61,8 @@ const MainPage = () => {
           loading="lazy"
           style={{ filter: "brightness(4)" }}
         />
-      </Box>
-      <div className="card-body">
+      </Box> */}
+      {/* <div className="card-body">
         <Grid
           container
           spacing={5}
@@ -77,26 +77,40 @@ const MainPage = () => {
             <Fade direction="up"></Fade>
           </Grid>
         </Grid>
-      </div>
+      </div> */}
       <Box
         // className={"scroll-stop"}
         sx={{
-          height: { xs: "45%", sm: 2, md: "40%", lg: "60vh" },
-          position: "relative",
-          // backgroundAttachment: "fixed",
-          // boxShadow: "1px 1px 5px 1px rgb(128,128,128,1)",
-          pt: "70px",
-          mt: "10px",
-          mb: "10px",
+          height: mainHeight,
         }}
       >
         <Grid
           container
           spacing={5}
           p={3}
-          height={"100%"}
+          // height={"100%"}
           justifyContent={"space-evenly"}
+          alignItems={"stretch"}
         >
+          <Grid item xs={12} md={6} lg={4} xl={4}>
+            <Fade direction="up">
+              <YouTube
+                videoId="yq4JuYcs69w"
+                opts={{
+                  width: "100%",
+                  position: "relative",
+                  overflow: "hidden",
+                  paddingTop: "56.25%",
+                  // playerVars: {
+                  //   autoplay: 1,
+                  // },
+                }}
+                onReady={() => {
+                  console.log("ready");
+                }}
+              />
+            </Fade>
+          </Grid>
           <Grid item xs={12} md={6} lg={4} xl={4}>
             <Fade direction="up">
               <YouTube

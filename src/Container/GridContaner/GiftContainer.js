@@ -7,6 +7,7 @@ import ButtonAppBar from "../../Components/appBar";
 import { MessageBox } from "react-chat-elements";
 import { AnimatedBox, ImageBox } from "../../Components/AnimatedBox.styled";
 import image from "../../images/alertImage.png";
+import ResponsiveAppBar from "../Navbar";
 
 export default function GiftContainer() {
   const size = useWindowSize();
@@ -14,7 +15,7 @@ export default function GiftContainer() {
   const mainHeight = size.height === null ? "80vh" : ` ${size.height - 150}px`;
   return (
     <div>
-      <ButtonAppBar />
+      <ResponsiveAppBar />
       <Container
         sx={{
           maxWidth: { xs: "xxl", md: "xl", lg: "xl" },

@@ -7,11 +7,14 @@
 }
 
 .detail_box h1 {
-  font-size: 40px;
-  text-transform: uppercase;
-  font-weight: 900;
-  transform: scaleY(10);
-  transform: rotateX(20deg);
+  color: #fff;
+
+  text-align: center;
+  font-family: Gilroy;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
 }
 
 .detail_box p {

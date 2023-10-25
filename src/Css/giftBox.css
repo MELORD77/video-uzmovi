@@ -1,18 +1,22 @@
 .giftBox {
-  padding: auto;
+  padding: 0;
   margin: auto;
   display: flex;
   width: 220px;
   border-radius: 50%;
   height: 220px;
-  justify-content: end;
+  justify-content: flex-end; /* end ni flex-end bilan almashtirish */
   margin-top: -100px;
-  background-color: #f0a605e4;
+  background-color: rgba(
+    240,
+    166,
+    5,
+    0.9
+  ); /* rgba formatida rangni o'zgartirish */
   z-index: 2;
   animation: giftBox-animation 2s infinite;
   scroll-snap-type: y mandatory;
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+  background-color: rgba(0, 0, 0, 0.4); /* Fallback rangni o'chirish */
 
   position: absolute;
   top: 100%;
@@ -22,9 +26,10 @@
 
   text-align: center;
 }
+
 @keyframes giftBox-animation {
   0% {
-    box-shadow: 0 0 0 0px rgba(33, 118, 255, 0.773);
+    box-shadow: 0 0 0 0 rgba(33, 118, 255, 0.773);
     background: rgba(33, 118, 255, 0.773);
   }
 

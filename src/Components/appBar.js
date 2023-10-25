@@ -6,7 +6,6 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { makeStyles } from "@mui/styles";
 import styled from "@emotion/styled";
 
 const MyToolbar = styled(Toolbar)({
@@ -15,24 +14,9 @@ const MyToolbar = styled(Toolbar)({
   minHeight: "55px!important",
 });
 export default function ButtonAppBar() {
-  const useStyles = makeStyles(() => ({
-    appBar: {
-      minHeight: "35px",
-      height: { xs: "70px", md: "55px" },
-      display: "flex",
-      alignContent: "center",
-      backgroundColor: "#31239c!important", // Set the desired minimum height here
-    },
-    toolbar: {
-      minHeight: "35px",
-      height: "55px",
-      // Set the desired minimum height here
-    },
-  }));
-  const classes = useStyles();
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="fixed">
         <MyToolbar>
           <IconButton
             size="large"

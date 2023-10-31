@@ -1,13 +1,8 @@
 .Navbar-image {
-  /* background-image: url("../images/banner.jpg"); */
-  background-color: #2f2496 !important;
-  /* background-color: #c5c2da !important; */
-
+  background-color: rgba(91, 95, 255, 0.1) !important;
   border-radius: 10px;
-  width: 70% !important;
-  margin-top: 15px !important;
-  margin-right: 15% !important;
   box-shadow: #021e514d 0px 19px 38px, rgba(32, 14, 199, 0.22) 0px -15px 12px !important;
+  backdrop-filter: blur(5px);
 }
 .toolbar {
   min-height: 60px !important;

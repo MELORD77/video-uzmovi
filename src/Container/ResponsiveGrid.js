@@ -1,13 +1,17 @@
 import * as React from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import "../Css/border.css";
-
+import "../Css/giftBox.css";
 import ResponsiveDialog from "../Components/AlertDialog";
-import { Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import "react-chat-elements/dist/main.css";
-import image from "../images/card.jpg";
-import StyledBox from "../Components/StyledBox";
-
+import cardImage from "../images/Vector.svg";
+import cardFooterImage from "../images/footer.svg";
+import cardHeader from "../images/cardHeader.svg";
+import cardHeaderBorder from "../images/cardHeaderBorder.svg";
+import cardHeaderFooter from "../images/cardHeaderFooter.svg";
+import cardCenter from "../images/cardCenter.svg";
+import romp from "../images/romp.svg";
 const GridData = [
   { id: 1, clicked: true },
   { id: 2, clicked: true },
@@ -54,16 +58,16 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
       <Grid
         container
         width={"100%"}
-        // ml={"20px"}
-        // className="grid-container-box"
-        height={{ xs: "100%", sm: "40%", md: "70%", lg: "90%" }}
-        spacing={{ xs: 1, sm: 0, md: 2, lg: 3 }}
-        rowSpacing={{ xs: 0, sm: 1, md: 10, lg: 3 }}
+        height={{ xs: "100%", sm: "40%", md: "70%", lg: "70%" }}
+        spacing={{ xs: 1, sm: 0, md: 2, lg: 1 }}
+        rowSpacing={{ xs: 0, sm: 1, md: 10, lg: 4 }}
         columns={{ xs: 6, sm: 6, md: 24, lg: 24, xl: 24 }}
         display={"flex"}
-        sx={{ py: { xs: "5px", sm: "0px", md: "0px", lg: "20px" } }}
+        sx={{
+          py: { xs: "5px", sm: "0px", md: "0px", lg: "20px" },
+        }}
         // p={{ xs: "5px", sm: "0px", md: "20px" }}
-        justifyContent={"center"}
+        // justifyContent={"center"}
         alignItems="stretch"
       >
         {GridData.map((e, index) => (
@@ -76,51 +80,65 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
             xl={3}
             key={index}
             display={"flex"}
-            // sx={{ border: "1px solid red" }}
             justifyContent={"center"}
-            minHeight={75}
+            minHeight={65}
           >
-            <StyledBox clicked={`${e.clicked}`}>
-              <Button
-                onClick={() => {
-                  handleSort(e.id);
-                  handleClickOpen();
-                }}
+            <Box className="giftBox">
+              <div className="headerCard">
+                <img
+                  className="card-Header-footer"
+                  src={cardHeaderFooter}
+                  alt="card"
+                />
+                <img
+                  src={cardHeaderBorder}
+                  alt="card"
+                  width={"100%"}
+                  height={"18px"}
+                />
+                <img
+                  className="card-Header-Black"
+                  src={cardHeader}
+                  alt="card"
+                />
+                <h1 className="header-text">Boriga Baraka</h1>
+              </div>
+              <Box
                 sx={{
-                  boxShadow: " rgba(250,250,250,0.70)  -0px 15px 20px -10px;",
-                  minWidth: { xs: "90%" },
-                  width: {
-                    xl: "95%",
-                    lg: "95%",
-                    md: "90%",
-                    sm: "70%",
-                    xs: "80%",
-                  },
-                  padding: "0px",
-                  margin: "0px",
-                  // height: "100%",
-                  height: {
-                    xl: "90px",
-                    lg: "70px",
-                    md: "50px",
-                    xs: "45px",
-                    sm: "50px",
-                  },
-                  // position: "relative",
-                  // display: "flex",
+                  height: "53%",
+                  width: "100%",
+                  bgcolor: "rgba(25, 33, 48, 1)",
                 }}
               >
-                {e.clicked && (
-                  <img
-                    loading="lazy"
-                    src={image}
-                    width={"100%"}
-                    height={"100%"}
-                    alt="img"
-                  />
-                )}
-              </Button>
-            </StyledBox>
+                <img
+                  src={cardImage}
+                  alt="card"
+                  width={"96%"}
+                  style={{ margin: "2px", marginTop: "0px" }}
+                />
+              </Box>
+              <Box
+                sx={{
+                  bgcolor: "rgba(51, 65, 89, 1), rgba(25, 33, 48, 1)",
+                  marginTop: "10px",
+                }}
+              >
+                <Box className="cardCenter">
+                  <img src={cardCenter} alt="cardFooter" width={"100%"} />
+                </Box>
+                <Box className="cardRomp">
+                  <img src={romp} alt="cardFooter" />
+                </Box>
+                <img
+                  src={cardFooterImage}
+                  alt="cardFooter"
+                  style={{ width: "100%" }}
+                />
+                <button className="card-Button">
+                  <h1 className="button-text"> открыть</h1>
+                </button>
+              </Box>{" "}
+            </Box>
           </Grid>
         ))}
       </Grid>

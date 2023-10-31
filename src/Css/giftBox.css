@@ -1,40 +1,96 @@
 .giftBox {
   padding: 0;
   margin: auto;
-  display: flex;
-  width: 220px;
-  border-radius: 50%;
-  height: 220px;
-  justify-content: flex-end; /* end ni flex-end bilan almashtirish */
-  margin-top: -100px;
-  background-color: rgba(
-    240,
-    166,
-    5,
-    0.9
-  ); /* rgba formatida rangni o'zgartirish */
-  z-index: 2;
-  animation: giftBox-animation 2s infinite;
-  scroll-snap-type: y mandatory;
-  background-color: rgba(0, 0, 0, 0.4); /* Fallback rangni o'chirish */
-
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-
-  text-align: center;
+  position: relative;
+  width: 120px;
+  height: 160px;
+  border-radius: 20px;
+  /* background: radial-gradient(
+    rgba(43, 54, 76, 1),
+    rgba(51, 65, 89, 1),
+    rgba(30, 39, 56, 1)
+  ); */
 }
-
-@keyframes giftBox-animation {
-  0% {
-    box-shadow: 0 0 0 0 rgba(33, 118, 255, 0.773);
-    background: rgba(33, 118, 255, 0.773);
-  }
-
-  100% {
-    box-shadow: 0 0 0 20px rgba(33, 118, 255, 0);
-    background: rgba(33, 118, 255, 0);
-  }
+.headerCard {
+  width: 90px;
+  height: 18px;
+  position: absolute;
+  /* border-radius: 0px 0px 105px 83px; */
+  left: 50%;
+  top: 0%;
+  /* background-image: url("../images/cardHeaderBorder.svg"); */
+  /* background: radial-gradient(
+    rgba(51, 65, 89, 1),
+    rgba(60, 75, 101, 1),
+    rgba(68, 85, 114, 1),
+    rgba(51, 65, 89, 1),
+    rgba(30, 39, 56, 1)
+  ); */
+  transform: translate(-50%);
+}
+.card-Header-Black {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 89%;
+  top: 0%;
+}
+.card-Header-footer {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 92%;
+  top: 0%;
+  margin: 0;
+}
+.cardCenter {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: -2px;
+  width: 100%;
+}
+.cardRomp {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 9px;
+  /* width: 60%; */
+}
+.card-Button {
+  background-color: rgba(25, 33, 48, 1);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 80px;
+  height: 19px;
+  margin-top: 40px;
+  border: 0;
+  border-radius: 10px;
+  /* width: 60%; */
+}
+.button-text {
+  color: #fff;
+  text-align: center;
+  font-family: Gilroy;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.header-text {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%);
+  top: 0px;
+  color: #fff;
+  text-align: center;
+  font-family: Gilroy;
+  font-size: 6.766px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
 }

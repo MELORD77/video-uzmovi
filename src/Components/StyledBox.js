@@ -8,7 +8,8 @@ const StyledBox = styled.div`
   border-top-style: groove;
   border-radius: 3px 3px;
   width: 65%;
-
+  border:1px solid red
+  height: 170px;
   @media screen and (max-width: 576px) {
     width: 70%;
   }

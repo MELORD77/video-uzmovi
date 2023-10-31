@@ -6,13 +6,12 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import "../Css/navbar.css";
 import "../Css/button.css";
 import LogoText from "../Components/LogoText";
 import logo from "../images/Logo1.png";
-import { Grid, IconButton, Paper, Stack, Tooltip } from "@mui/material";
+import { Grid, IconButton } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 const pages = ["Total", "Pricing", "Blog"];
@@ -86,7 +85,7 @@ function ResponsiveAppBar() {
             <LogoText>MUSOFIR</LogoText>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Grid container justifyContent={"center"}>
+            <Grid container justifyContent={"start"}>
               <Grid item>
                 {/* <LogoText>MUSOFIR</LogoText> */}
 

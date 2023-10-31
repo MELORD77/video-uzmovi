@@ -1,59 +1,59 @@
 import React from "react";
-import { Box, Container, Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import ResponsiveGrid from "../ResponsiveGrid";
 import "./style.css";
 import { useWindowSize } from "@uidotdev/usehooks";
-import ButtonAppBar from "../../Components/appBar";
-import { MessageBox } from "react-chat-elements";
-import { AnimatedBox, ImageBox } from "../../Components/AnimatedBox.styled";
-import image from "../../images/alertImage.png";
+import imageBg from "../../images/Rectangle10.png";
 import ResponsiveAppBar from "../Navbar";
 
 export default function GiftContainer() {
   const size = useWindowSize();
 
-  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 150}px`;
+  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 105}px`;
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: `url(${imageBg})`,
+        backgroundAttachment: "fixed",
+      }}
+    >
       <ResponsiveAppBar />
       <Container
         sx={{
-          maxWidth: { xs: "xxl", md: "xl", lg: "xl" },
+          maxWidth: { xs: "xxl", md: "xl", lg: "lg" },
         }}
       >
         <Grid container className="grid-container" height={mainHeight}>
-          <Grid item xs={12} md={8} className="grid-item">
+          <Grid item xs={12} md={12} className="grid-item">
             <ResponsiveGrid />
           </Grid>
-          <Grid item xs={12} md={4} className="grid-item-image">
-            <Box>
-              <AnimatedBox>
-                <MessageBox
-                  styles={{ width: "60%" }}
-                  position="right"
-                  title="Iltimos"
-                  type="text"
-                  text={`${3} ta tugmachani bosing `}
-                  date={new Date()}
+          {/* <Box>
+            <AnimatedBox>
+              <MessageBox
+                styles={{ width: "60%" }}
+                position="right"
+                title="Iltimos"
+                type="text"
+                text={`${3} ta tugmachani bosing `}
+                date={new Date()}
+              />
+              <ImageBox>
+                <img
+                  onLoad={() => {
+                    // setLoading(false);
+                  }}
+                  src={image}
+                  alt="imgPerson"
+                  loading="lazy"
+                  height={"100%"}
+                  width={"100%"}
                 />
-                <ImageBox>
-                  <img
-                    onLoad={() => {
-                      // setLoading(false);
-                    }}
-                    src={image}
-                    alt="imgPerson"
-                    loading="lazy"
-                    height={"100%"}
-                    width={"100%"}
-                  />
-                </ImageBox>{" "}
-              </AnimatedBox>
-            </Box>{" "}
-          </Grid>
+              </ImageBox>{" "}
+            </AnimatedBox>
+          </Box>{" "} */}
         </Grid>
       </Container>
-      <Box
+      {/* <Box
         sx={{
           width: "100%",
           height: "50px",
@@ -61,7 +61,7 @@ export default function GiftContainer() {
           position: "absolute",
           bottom: 0,
         }}
-      ></Box>
+      ></Box> */}
     </div>
   );
 }

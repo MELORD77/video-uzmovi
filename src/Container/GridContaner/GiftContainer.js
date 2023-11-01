@@ -14,7 +14,9 @@ export default function GiftContainer() {
     <div
       style={{
         backgroundImage: `url(${imageBg})`,
-        backgroundAttachment: "fixed",
+
+        // backgroundAttachment: "fixed",
+        border: "0.1px solid rgba(51, 65, 89, 0.1)",
       }}
     >
       <ResponsiveAppBar />

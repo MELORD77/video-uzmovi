@@ -14,6 +14,7 @@ import logo from "../images/Logo1.png";
 import { Grid, IconButton } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
+import textImage from "../images/Boriga-Baraka.svg";
 const pages = ["Total", "Pricing", "Blog"];
 
 function ResponsiveAppBar() {
@@ -25,7 +26,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position={"fixed"} className="Navbar-image">
-      <Container maxWidth="xxl">
+      <Container maxWidth="xl">
         <Toolbar
           disableGutters
           variant="dense"
@@ -72,24 +73,28 @@ function ResponsiveAppBar() {
           <Box
             component={NavLink}
             to={"/main"}
-            sx={{ display: { xs: "none", md: "flex", sm: "flex" }, mr: 8 }}
+            sx={{ display: { xs: "none", md: "flex", sm: "flex" }, mr: 2 }}
           >
             <img src={logo} alt={"logo"} width={"40px"} />
           </Box>
           <Box
             sx={{
               display: { xs: "flex", md: "none", sm: "flex" },
-              border: "1px solid red",
             }}
           >
-            <LogoText>MUSOFIR</LogoText>
+            <img src={textImage} alt={"logo"} width={"40px"} />
+            {/* <LogoText>MUSOFIR</LogoText> */}
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Grid container justifyContent={"start"}>
+            <Grid
+              container
+              justifyContent={"start"}
+              alignItems={"center"}
+              sx={{ pt: 1 }}
+            >
               <Grid item>
                 {/* <LogoText>MUSOFIR</LogoText> */}
-
-                <Typography> MUSOFIR </Typography>
+                <img src={textImage} alt={"logo"} width={"180px"} />
               </Grid>
             </Grid>
           </Box>

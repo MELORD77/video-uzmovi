@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid } from "@mui/material";
+import { Box, Button, Container, Grid } from "@mui/material";
 import ResponsiveGrid from "../ResponsiveGrid";
 import "./style.css";
 import { useWindowSize } from "@uidotdev/usehooks";
@@ -9,7 +9,7 @@ import ResponsiveAppBar from "../Navbar";
 export default function GiftContainer() {
   const size = useWindowSize();
 
-  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 105}px`;
+  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 135}px`;
   return (
     <div
       style={{
@@ -26,6 +26,7 @@ export default function GiftContainer() {
         }}
       >
         <Grid container className="grid-container" height={mainHeight}>
+          <Box sx={{ width: "100%", height: "70px", bgcolor: "red" }}></Box>
           <Grid item xs={12} md={12} className="grid-item">
             <ResponsiveGrid />
           </Grid>

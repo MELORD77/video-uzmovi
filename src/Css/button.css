@@ -27,24 +27,56 @@
   box-shadow: 0 0.3em 1em -0.5em #14a73e98;
 } */
 .button {
-  border-radius: 12px;
-  color: #ffffff;
-  font-size: medium;
   display: flex;
-  border: none;
+  width: 128px;
+  height: 40px;
+  padding: 16px 24px;
+  justify-content: center;
   align-items: center;
-  font-weight: 700;
-  width: 95px;
-  margin-top: 4px;
-  height: 33px;
-  background-color: rgb(133, 63, 234);
-  box-shadow: 0 0.3em 1em -0.5em #ae12de98 !important;
-  cursor: pointer;
-  user-select: none;
-  touch-action: manipulation;
+  gap: 10px;
+  border-radius: 10px;
+  background: #fff;
+  border: 0;
+}
+.navbar-button {
+  color: var(--Gray-1, #333);
+  text-align: right;
+  font-family: Gilroy, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.button1 {
+  background: none;
+  display: flex;
+  width: 228px;
+  height: 40px;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-right: 20px;
+  border-radius: 10px;
+  border: 0;
+}
+.navbar-button1 {
+  color: var(--Gray-6, #f2f2f2);
+
+  /* Body text */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .button:hover {
   box-shadow: 0 0.5em 1.5em -0.5em #a714a298 !important;
+  cursor: pointer;
+}
+.button1:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #a714a298 !important;
+  cursor: pointer;
 }
 
 .button:active {

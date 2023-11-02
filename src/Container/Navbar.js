@@ -9,9 +9,8 @@ import Avatar from "@mui/material/Avatar";
 import MenuItem from "@mui/material/MenuItem";
 import "../Css/navbar.css";
 import "../Css/button.css";
-import LogoText from "../Components/LogoText";
 import logo from "../images/Logo1.png";
-import { Grid, IconButton } from "@mui/material";
+import { Button, Grid, IconButton } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import textImage from "../images/Boriga-Baraka.svg";
@@ -83,7 +82,6 @@ function ResponsiveAppBar() {
             }}
           >
             <img src={textImage} alt={"logo"} width={"40px"} />
-            {/* <LogoText>MUSOFIR</LogoText> */}
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Grid
@@ -93,41 +91,11 @@ function ResponsiveAppBar() {
               sx={{ pt: 1 }}
             >
               <Grid item>
-                {/* <LogoText>MUSOFIR</LogoText> */}
                 <img src={textImage} alt={"logo"} width={"180px"} />
               </Grid>
             </Grid>
           </Box>
-          {/* <Box sx={{ flexGrow: 0, display: "flex" }}>
-            <Tooltip title="User name">
-              <IconButton sx={{ p: 0 }}>
-                <Avatar alt="U" src="../images/Gift-rafiki.svg" />
-              </IconButton>
-            </Tooltip>
 
-            <Stack
-              mx={2}
-              spacing={0}
-              sx={{ display: { xs: "none", md: "flex" } }}
-            >
-              <Typography
-                variant="body1"
-                color={"gold"}
-                noWrap
-                sx={{ display: { xs: "none", md: "flex" } }}
-              >
-                Name
-              </Typography>
-              <Typography
-                variant="body1"
-                color={"gold"}
-                noWrap
-                sx={{ display: { xs: "none", md: "flex" } }}
-              >
-                Total:100
-              </Typography>
-            </Stack>
-          </Box> */}
           <Box
             sx={{
               flexGrow: 0,
@@ -135,22 +103,14 @@ function ResponsiveAppBar() {
               display: { xs: "none", md: "flex" },
             }}
           >
-            <button className="button">
-              <PermIdentityIcon />{" "}
-              <Typography
-                color={"#fff"}
-                noWrap
-                ml={0.8}
-                mr={0}
-                sx={{
-                  display: { xs: "none", md: "flex" },
-                  fontWeight: "600",
-                }}
-              >
-                Login
-              </Typography>
+            {" "}
+            <button className="button1">
+              <PermIdentityIcon sx={{ color: "#f2f2f2" }} />
+              <Typography className="navbar-button1">Учетная запись</Typography>
             </button>
-
+            <button className="button">
+              <Typography className="navbar-button">Авторизация</Typography>
+            </button>
             {/* <Avatar src="../images/Gift-rafiki.svg" /> */}
           </Box>
           <Box

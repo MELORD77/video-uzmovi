@@ -55,34 +55,19 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
 
   return (
     <>
-      <Grid
-        container
-        width={"100%"}
-        height={{ xs: "100%", sm: "40%", md: "70%", lg: "70%" }}
-        spacing={{ xs: 1, sm: 0, md: 2, lg: 1 }}
-        rowSpacing={{ xs: 0, sm: 1, md: 10, lg: 4 }}
-        columns={{ xs: 6, sm: 6, md: 24, lg: 24, xl: 24 }}
-        display={"flex"}
-        sx={{
-          py: { xs: "5px", sm: "0px", md: "0px", lg: "20px" },
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          justifyContent: "center",
+          alignItems: "start",
+          alignContent: "start",
+          gap: "8px",
+          flexWrap: "wrap",
         }}
-        // p={{ xs: "5px", sm: "0px", md: "20px" }}
-        // justifyContent={"center"}
-        alignItems="stretch"
       >
         {GridData.map((e, index) => (
-          <Grid
-            item
-            xs={1}
-            sm={1}
-            md={3}
-            lg={3}
-            xl={3}
-            key={index}
-            display={"flex"}
-            justifyContent={"center"}
-            minHeight={65}
-          >
+          <div>
             <Box className="giftBox">
               <div className="headerCard">
                 <img
@@ -103,31 +88,15 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
                 />
                 <h1 className="header-text">Boriga Baraka</h1>
               </div>
-              <Box
-                sx={{
-                  height: "53%",
-                  width: "100%",
-                  bgcolor: "rgba(25, 33, 48, 1)",
-                }}
-              >
-                <img
-                  src={cardImage}
-                  alt="card"
-                  width={"96%"}
-                  style={{ margin: "2px", marginTop: "0px" }}
-                />
+              <Box className="cardContent">
+                <img src={cardImage} alt="card" width={"100%"} />
               </Box>
-              <Box
-                sx={{
-                  bgcolor: "rgba(51, 65, 89, 1), rgba(25, 33, 48, 1)",
-                  marginTop: "10px",
-                }}
-              >
+              <Box className="cardFooter">
                 <Box className="cardCenter">
                   <img src={cardCenter} alt="cardFooter" width={"100%"} />
                 </Box>
-                <Box className="cardRomp">
-                  <img src={romp} alt="cardFooter" />
+                <Box>
+                  <img className="cardRomp" src={romp} alt="cardFooter" />
                 </Box>
                 <img
                   src={cardFooterImage}
@@ -139,9 +108,9 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
                 </button>
               </Box>{" "}
             </Box>
-          </Grid>
+          </div>
         ))}
-      </Grid>
+      </div>
 
       <ResponsiveDialog open={open} setOpen={setOpen} />
       {/* {alert && ( */}

@@ -1,15 +1,17 @@
 import React from "react";
-import { Box, Button, Container, Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import ResponsiveGrid from "../ResponsiveGrid";
 import "./style.css";
 import { useWindowSize } from "@uidotdev/usehooks";
 import imageBg from "../../images/Rectangle10.png";
 import ResponsiveAppBar from "../Navbar";
+import ContentTools from "./ContentTools";
+import GiftFooter from "./giftFooter";
 
 export default function GiftContainer() {
   const size = useWindowSize();
 
-  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 135}px`;
+  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 105}px`;
   return (
     <div
       style={{
@@ -22,49 +24,19 @@ export default function GiftContainer() {
       <ResponsiveAppBar />
       <Container
         sx={{
-          maxWidth: { xs: "xxl", md: "xl", lg: "lg" },
+          maxWidth: { xs: "xxl", md: "xl", lg: "xl" },
+          pt: { xs: 7, lg: 10 },
         }}
       >
-        <Grid container className="grid-container" height={mainHeight}>
-          <Box sx={{ width: "100%", height: "70px", bgcolor: "red" }}></Box>
-          <Grid item xs={12} md={12} className="grid-item">
+        <Grid container height={mainHeight}>
+          <ContentTools />
+
+          <Grid item xs={12} md={12}>
             <ResponsiveGrid />
           </Grid>
-          {/* <Box>
-            <AnimatedBox>
-              <MessageBox
-                styles={{ width: "60%" }}
-                position="right"
-                title="Iltimos"
-                type="text"
-                text={`${3} ta tugmachani bosing `}
-                date={new Date()}
-              />
-              <ImageBox>
-                <img
-                  onLoad={() => {
-                    // setLoading(false);
-                  }}
-                  src={image}
-                  alt="imgPerson"
-                  loading="lazy"
-                  height={"100%"}
-                  width={"100%"}
-                />
-              </ImageBox>{" "}
-            </AnimatedBox>
-          </Box>{" "} */}
+          <GiftFooter />
         </Grid>
       </Container>
-      {/* <Box
-        sx={{
-          width: "100%",
-          height: "50px",
-          borderTop: "1px solid gray",
-          position: "absolute",
-          bottom: 0,
-        }}
-      ></Box> */}
     </div>
   );
 }

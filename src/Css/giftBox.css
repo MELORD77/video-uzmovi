@@ -1,31 +1,18 @@
 .giftBox {
   padding: 0;
-  margin: auto;
+  margin: 10px 0px 10px 10px;
   position: relative;
-  width: 120px;
-  height: 160px;
+  width: 107px;
+  height: 150px;
   border-radius: 20px;
-  /* background: radial-gradient(
-    rgba(43, 54, 76, 1),
-    rgba(51, 65, 89, 1),
-    rgba(30, 39, 56, 1)
-  ); */
 }
+
 .headerCard {
   width: 90px;
   height: 18px;
   position: absolute;
-  /* border-radius: 0px 0px 105px 83px; */
   left: 50%;
   top: 0%;
-  /* background-image: url("../images/cardHeaderBorder.svg"); */
-  /* background: radial-gradient(
-    rgba(51, 65, 89, 1),
-    rgba(60, 75, 101, 1),
-    rgba(68, 85, 114, 1),
-    rgba(51, 65, 89, 1),
-    rgba(30, 39, 56, 1)
-  ); */
   transform: translate(-50%);
 }
 .card-Header-Black {
@@ -42,6 +29,19 @@
   width: 92%;
   top: 0%;
   margin: 0;
+}
+.cardContent {
+  margin: 0;
+  padding: 1px;
+  background: rgba(25, 33, 48, 1);
+  height: 70%;
+}
+.cardFooter {
+  margin: 0;
+  padding: 1px;
+  margin-top: -18px;
+  background: rgba(25, 33, 48, 1);
+  height: 46%;
 }
 .cardCenter {
   position: absolute;

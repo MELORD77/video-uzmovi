@@ -12,6 +12,7 @@ import cardHeaderBorder from "../images/cardHeaderBorder.svg";
 import cardHeaderFooter from "../images/cardHeaderFooter.svg";
 import cardCenter from "../images/cardCenter.svg";
 import romp from "../images/romp.svg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const GridData = [
   { id: 1, clicked: true },
   { id: 2, clicked: true },
@@ -67,21 +68,24 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
         }}
       >
         {GridData.map((e, index) => (
-          <div>
+          <div key={index}>
             <Box className="giftBox">
               <div className="headerCard">
                 <img
+                  loading="lazy"
                   className="card-Header-footer"
                   src={cardHeaderFooter}
                   alt="card"
                 />
                 <img
+                  loading="lazy"
                   src={cardHeaderBorder}
                   alt="card"
                   width={"100%"}
                   height={"18px"}
                 />
                 <img
+                  loading="lazy"
                   className="card-Header-Black"
                   src={cardHeader}
                   alt="card"
@@ -89,16 +93,35 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
                 <h1 className="header-text">Boriga Baraka</h1>
               </div>
               <Box className="cardContent">
-                <img src={cardImage} alt="card" width={"100%"} />
+                <LazyLoadImage
+                  loading="lazy"
+                  effect="blur"
+                  alt={"card"}
+                  src={cardImage} // use normal <img> attributes as props
+                  width={"100%"}
+                  onLoad={(e) => console.log(e)}
+                />
+                {/* <img loading="lazy" src={cardImage} alt="card" width={"100%"} /> */}
               </Box>
               <Box className="cardFooter">
                 <Box className="cardCenter">
-                  <img src={cardCenter} alt="cardFooter" width={"100%"} />
+                  <img
+                    loading="lazy"
+                    src={cardCenter}
+                    alt="cardFooter"
+                    width={"100%"}
+                  />
                 </Box>
                 <Box>
-                  <img className="cardRomp" src={romp} alt="cardFooter" />
+                  <img
+                    loading="lazy"
+                    className="cardRomp"
+                    src={romp}
+                    alt="cardFooter"
+                  />
                 </Box>
                 <img
+                  loading="lazy"
                   src={cardFooterImage}
                   alt="cardFooter"
                   style={{ width: "100%" }}
@@ -112,7 +135,7 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
         ))}
       </div>
 
-      <ResponsiveDialog open={open} setOpen={setOpen} />
+      {/* <ResponsiveDialog open={open} setOpen={setOpen} /> */}
       {/* {alert && ( */}
       {/* )} */}
     </>

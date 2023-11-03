@@ -9,6 +9,8 @@ import imageOil from "../images/Rectangle10.png";
 import TitleAnimationText from "../Components/TitleAnimationText";
 import MarqueeComponent from "../Components/Marquee";
 import FooterComponent from "./FooterComponent";
+
+import { motion } from "framer-motion";
 const ResponsiveAppBar = React.lazy(() => import("./Navbar"));
 
 const MainPage = () => {
@@ -36,7 +38,11 @@ const MainPage = () => {
   };
 
   return (
-    <div className="">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <ResponsiveAppBar />
       <Box height={mainHeight} sx={animationStyles}>
         <TitleAnimationText />
@@ -53,7 +59,7 @@ const MainPage = () => {
         <FooterComponent />
       </Box>
       <MarqueeComponent />
-    </div>
+    </motion.div>
   );
 };
 export default MainPage;

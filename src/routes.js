@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React, { Suspense, lazy } from "react";
 import GiftContainer from "./Container/GridContaner/GiftContainer";
 
 const MainPage = lazy(() => import("./Container/MainContainer"));
@@ -12,19 +12,11 @@ const routes = [
   },
   {
     path: "/main",
-    element: (
-      <React.Suspense fallback={<Loading />}>
-        <MainPage />,
-      </React.Suspense>
-    ),
+    element: <MainPage />,
   },
   {
     path: "/gift",
-    element: (
-      <React.Suspense fallback={<Loading />}>
-        <GiftContainer />,
-      </React.Suspense>
-    ),
+    element: <GiftContainer />,
   },
   {
     path: "/",

@@ -1,6 +1,6 @@
 import React from "react";
 import "../Css/detail.css";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import Fade from "@mui/material/Fade";
 
@@ -20,9 +20,9 @@ export default function TitleAnimationText() {
             </Fade>
             <p>Обманчиво простая, невероятно интересная</p>
           </div>
-          <div component={NavLink} to={"/gift"} className="button-box">
+          <Box component={NavLink} to={"/gift"} className="button-box">
             <button className="button"> Играть сейчас</button>
-          </div>
+          </Box>
         </Grid>
       </Grid>
     </div>

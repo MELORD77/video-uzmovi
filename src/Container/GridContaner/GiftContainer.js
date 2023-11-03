@@ -7,19 +7,22 @@ import imageBg from "../../images/Rectangle10.png";
 import ResponsiveAppBar from "../Navbar";
 import ContentTools from "./ContentTools";
 import GiftFooter from "./giftFooter";
-
+import { motion } from "framer-motion";
 export default function GiftContainer() {
   const size = useWindowSize();
 
   const mainHeight = size.height === null ? "80vh" : ` ${size.height - 105}px`;
   return (
-    <div
+    <motion.div
       style={{
         backgroundImage: `url(${imageBg})`,
 
         // backgroundAttachment: "fixed",
-        border: "0.1px solid rgba(51, 65, 89, 0.1)",
+        // border: "0.1px solid rgba(51, 65, 89, 0.1)",
       }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
       <ResponsiveAppBar />
       <Container
@@ -37,6 +40,6 @@ export default function GiftContainer() {
           <GiftFooter />
         </Grid>
       </Container>
-    </div>
+    </motion.div>
   );
 }

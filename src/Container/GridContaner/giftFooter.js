@@ -12,7 +12,7 @@ export default function GiftFooter() {
           backgroundImage: `url(${imageBg})`,
           backgroundSize: "100%",
           //   border: "1px solid red",
-          display: "flex",
+          display: { xs: "none", md: "flex" },
           px: 2,
           justifyContent: "space-around",
           alignItems: "center",

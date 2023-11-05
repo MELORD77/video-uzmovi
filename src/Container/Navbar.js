@@ -43,46 +43,30 @@ function ResponsiveAppBar() {
           >
             <img src={logo} alt={"logo"} width={"35px"} />
           </Box>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <Menu
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Box
-            component={NavLink}
-            to={"/main"}
-            sx={{ display: { xs: "none", md: "flex", sm: "flex" }, mr: 2 }}
-          >
-            <img src={logo} alt={"logo"} width={"40px"} />
-          </Box>
-          <Box
+          {/* <Box
             sx={{
-              display: { xs: "flex", md: "none", sm: "flex" },
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+              px: 2,
+              border: "1px solid red",
             }}
           >
-            <img src={textImage} alt={"logo"} width={"40px"} />
-          </Box>
+            <Box
+              component={NavLink}
+              to={"/main"}
+              sx={{ display: { xs: "none", md: "flex", sm: "flex" } }}
+            >
+              <img src={logo} alt={"logo"} width={"40px"} />
+            </Box>
+            <Box
+              sx={{
+                display: { xs: "flex", md: "none", sm: "flex" },
+              }}
+            >
+              <img src={textImage} alt={"logo"} width={"40px"} />
+            </Box>
+          </Box> */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Grid
               container

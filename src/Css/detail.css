@@ -1,6 +1,5 @@
 .detail_box {
   color: #dfe0e2;
-  /* background: rgba(37, 38, 43, 0.572); */
   border-radius: 20px;
   padding: 2px;
   padding-inline-start: 15px;
@@ -32,7 +31,6 @@
   justify-content: center;
 }
 
-/* CSS */
 .button {
   width: 190px;
   height: 35px;
@@ -47,4 +45,49 @@
   font-weight: 700;
   line-height: normal;
   background: #2f2496;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+  .detail_box p {
+    width: auto;
+    font-size: 12px;
+  }
+
+  .button {
+    width: 150px;
+    height: 30px;
+    font-size: 10px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .detail_box p {
+    width: 80%;
+    font-size: 32px;
+  }
+
+  .button {
+    width: 170px;
+    height: 32px;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .detail_box {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .detail_box p {
+    width: 100%;
+    font-size: 40px;
+  }
+
+  .button {
+    width: 190px;
+    height: 35px;
+    font-size: 12px;
+  }
 }

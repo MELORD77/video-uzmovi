@@ -88,9 +88,85 @@
   color: #fff;
   text-align: center;
   font-family: Gilroy;
-  font-size: 6.766px;
+  font-size: 6.583px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
   text-transform: uppercase;
+}
+@media (max-width: 600px) {
+  .giftBox {
+    margin: 0px 5px;
+    width: 55px;
+    height: 100px;
+    /* position: absolute; */
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .headerCard {
+    width: 70%;
+    height: 6px;
+    margin-top: -5px;
+  }
+
+  .card-Header-Black {
+    width: 80%;
+    display: none;
+  }
+  .header-text {
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    top: 60%;
+    transform: translate(-50%);
+    color: #fff;
+    text-align: center;
+    font-family: Gilroy;
+    font-size: 3.383px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  .card-Header-footer {
+    width: 85%;
+    display: none;
+  }
+
+  .cardContent {
+    height: 60%;
+  }
+
+  .cardFooter {
+    height: 36%;
+  }
+
+  .cardCenter {
+    margin-top: -5px;
+  }
+
+  .cardRomp {
+    margin-top: 0px;
+    width: 10px;
+  }
+
+  .card-Button {
+    width: 33px;
+    height: 6px;
+    margin-top: 20px;
+  }
+
+  .button-text {
+    color: #fff;
+
+    text-align: center;
+    font-family: Gilroy;
+    font-size: 4px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+  }
 }

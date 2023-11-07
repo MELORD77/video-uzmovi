@@ -1,9 +1,6 @@
 import * as React from "react";
-import Grid from "@mui/material/Unstable_Grid2";
-import "../Css/border.css";
 import "../Css/giftBox.css";
-import ResponsiveDialog from "../Components/AlertDialog";
-import { Box, Button, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import "react-chat-elements/dist/main.css";
 import cardImage from "../images/Vector.svg";
 import cardFooterImage from "../images/footer.svg";
@@ -58,8 +55,8 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
     <>
       <div
         style={{
-          display: "flex",
           width: "100%",
+          display: "flex",
           justifyContent: "center",
           alignItems: "start",
           alignContent: "start",
@@ -101,7 +98,6 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
                   width={"100%"}
                   onLoad={(e) => console.log(e)}
                 />
-                {/* <img loading="lazy" src={cardImage} alt="card" width={"100%"} /> */}
               </Box>
               <Box className="cardFooter">
                 <Box className="cardCenter">

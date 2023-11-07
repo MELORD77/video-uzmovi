@@ -10,11 +10,10 @@ import MenuItem from "@mui/material/MenuItem";
 import "../Css/navbar.css";
 import "../Css/button.css";
 import logo from "../images/Logo1.png";
-import { Button, Grid, IconButton } from "@mui/material";
+import { Grid, IconButton } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import textImage from "../images/Boriga-Baraka.svg";
-const pages = ["Total", "Pricing", "Blog"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -32,42 +31,41 @@ function ResponsiveAppBar() {
           className="toolbar"
           sx={{ minHeight: "45px" }}
         >
+          {/* Mobile version */}
           <Box
             sx={{
-              display: {
-                xs: "flex",
-                md: "none",
-                sm: "none",
-              },
-            }}
-          >
-            <img src={logo} alt={"logo"} width={"35px"} />
-          </Box>
-          {/* <Box
-            sx={{
               width: "100%",
-              display: "flex",
+              display: { xs: "flex", md: "none" },
               justifyContent: "space-between",
               px: 2,
-              border: "1px solid red",
             }}
           >
-            <Box
-              component={NavLink}
-              to={"/main"}
-              sx={{ display: { xs: "none", md: "flex", sm: "flex" } }}
-            >
+            <Box component={NavLink} to={"/main"} sx={{}}>
               <img src={logo} alt={"logo"} width={"40px"} />
             </Box>
             <Box
               sx={{
-                display: { xs: "flex", md: "none", sm: "flex" },
+                display: { xs: "flex", md: "none" },
               }}
             >
-              <img src={textImage} alt={"logo"} width={"40px"} />
+              <img src={textImage} alt={"logo"} width={"220px"} />
             </Box>
-          </Box> */}
+            <Box>
+              <IconButton sx={{ p: 0 }}>
+                <Avatar alt="U" src="../images/Gift-rafiki.svg" />
+              </IconButton>
+            </Box>
+
+            {/* DescTop version */}
+          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <Box
+              component={NavLink}
+              to={"/main"}
+              sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
+            >
+              <img src={logo} alt={"logo"} width={"40px"} />
+            </Box>
             <Grid
               container
               justifyContent={"start"}
@@ -87,7 +85,6 @@ function ResponsiveAppBar() {
               display: { xs: "none", md: "flex" },
             }}
           >
-            {" "}
             <button className="button1">
               <PermIdentityIcon sx={{ color: "#f2f2f2" }} />
               <Typography className="navbar-button1">Учетная запись</Typography>
@@ -95,18 +92,6 @@ function ResponsiveAppBar() {
             <button className="button">
               <Typography className="navbar-button">Авторизация</Typography>
             </button>
-            {/* <Avatar src="../images/Gift-rafiki.svg" /> */}
-          </Box>
-          <Box
-            sx={{
-              flexGrow: 0,
-              height: "40px",
-              display: { xs: "flex", md: "none" },
-            }}
-          >
-            <IconButton sx={{ p: 0 }}>
-              <Avatar alt="U" src="../images/Gift-rafiki.svg" />
-            </IconButton>
           </Box>
         </Toolbar>
       </Container>

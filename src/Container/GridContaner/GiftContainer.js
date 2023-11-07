@@ -11,14 +11,11 @@ import { motion } from "framer-motion";
 export default function GiftContainer() {
   const size = useWindowSize();
 
-  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 105}px`;
+  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 101}px`;
   return (
     <motion.div
       style={{
         backgroundImage: `url(${imageBg})`,
-
-        // backgroundAttachment: "fixed",
-        // border: "0.1px solid rgba(51, 65, 89, 0.1)",
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

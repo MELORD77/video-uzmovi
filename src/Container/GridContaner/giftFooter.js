@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
 import imageBg from "../../images/footerBox.png";
 import person from "../../images/imagePerson.png";
@@ -11,14 +11,13 @@ export default function GiftFooter() {
           height: "160px",
           backgroundImage: `url(${imageBg})`,
           backgroundSize: "100%",
-          //   border: "1px solid red",
-          display: { xs: "none", md: "flex" },
+          display: { xs: "flex", md: "flex" },
           px: 2,
           justifyContent: "space-around",
           alignItems: "center",
         }}
       >
-        <Box sx={{ width: "500px" }}>
+        <Box sx={{ width: { xs: "270px", md: "500px" } }}>
           <h1 className="footer-text">Выберите 3 произвольные карты</h1>
         </Box>
 

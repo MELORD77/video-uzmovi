@@ -96,9 +96,9 @@
 }
 @media (max-width: 600px) {
   .giftBox {
-    margin: 0px 5px;
-    width: 55px;
-    height: 100px;
+    margin: 0px 4px;
+    width: 54px;
+    height: 95px;
     /* position: absolute; */
     left: 50%;
     transform: translate(-50%);

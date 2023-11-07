@@ -9,9 +9,7 @@ export default function ContentTools() {
       <Box
         sx={{
           width: "100%",
-          height: "70px",
-
-          //   border: "1px solid red",
+          height: "60px",
           display: "flex",
           px: 2,
           justifyContent: "space-between",
@@ -25,16 +23,6 @@ export default function ContentTools() {
           </button>
         </Box>
         <Box>
-          {/* <Typography
-            color={"#FDD60C"}
-            textAlign={"center"}
-            fontFamily={"Vipnagorgialla"}
-            fontSize={"36px"}
-            fontWeight={700}
-            lineHeight={"50px"}
-          >
-            Новая игра
-          </Typography> */}
           <h1 className="toolsText">Новая игра</h1>
         </Box>
         <Box>

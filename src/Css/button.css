@@ -38,15 +38,15 @@
   background: #fff;
   border: 0;
 }
-.navbar-button {
-  color: var(--Gray-1, #333);
+/* .navbar-button {
+  color: var(--Gray-1, #e3dddd);
   text-align: right;
   font-family: Gilroy, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-}
+} */
 .button1 {
   background: none;
   display: flex;

@@ -8,6 +8,7 @@ import ResponsiveAppBar from "../Navbar";
 import ContentTools from "./ContentTools";
 import GiftFooter from "./giftFooter";
 import { motion } from "framer-motion";
+import SkeletonPage from "../../Components/Skeleton";
 export default function GiftContainer() {
   const size = useWindowSize();
 
@@ -32,7 +33,8 @@ export default function GiftContainer() {
           <ContentTools />
 
           <Grid item xs={12} md={12}>
-            <ResponsiveGrid />
+            <SkeletonPage />
+            {/* <ResponsiveGrid /> */}
           </Grid>
           <GiftFooter />
         </Grid>

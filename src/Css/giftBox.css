@@ -9,7 +9,7 @@
 
 .headerCard {
   width: 90px;
-  height: 18px;
+  height: 18pex;
   position: absolute;
   left: 50%;
   top: 0%;
@@ -41,13 +41,13 @@
   padding: 1px;
   margin-top: -18px;
   background: rgba(25, 33, 48, 1);
-  height: 46%;
+  height: 48%;
 }
 .cardCenter {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  margin-top: -2px;
+  margin-top: -2.5px;
   width: 100%;
 }
 .cardRomp {
@@ -96,34 +96,37 @@
 }
 @media (max-width: 600px) {
   .giftBox {
-    margin: 0px 4px;
+    margin: 0px 04px;
     width: 54px;
-    height: 95px;
+    height: 85px;
+    border: 1px solid rgb(30, 41, 58);
+    border-radius: 3px;
+    /* background: rgba(25, 35, 51, 1); */
     /* position: absolute; */
-    left: 50%;
-    transform: translate(-50%);
   }
 
   .headerCard {
-    width: 70%;
-    height: 6px;
+    width: 80%;
+    height: 8px;
     margin-top: -5px;
   }
 
   .card-Header-Black {
-    width: 80%;
-    display: none;
+    width: 90%;
+    margin-top: 5.5px;
+    /* z-index: 1; */
+    /* display: none; */
   }
   .header-text {
     position: absolute;
     left: 50%;
     width: 100%;
-    top: 60%;
+    top: 65%;
     transform: translate(-50%);
     color: #fff;
     text-align: center;
     font-family: Gilroy;
-    font-size: 3.383px;
+    font-size: 3px;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
@@ -136,34 +139,46 @@
   }
 
   .cardContent {
-    height: 60%;
+    height: 73%;
+    margin: 0;
+    padding: 0.5;
+    background: rgba(51, 65, 89, 1), rgba(25, 33, 48, 1);
+    border-radius: 2px;
   }
 
   .cardFooter {
-    height: 36%;
+    height: 37px;
+    margin: 0;
+    margin-top: -17px;
+    padding: 0;
+
+    /* display: none; */
   }
 
   .cardCenter {
-    margin-top: -5px;
+    margin-top: -6px;
   }
 
   .cardRomp {
-    margin-top: 0px;
-    width: 10px;
+    margin-top: 4px;
+    width: 8px;
   }
 
   .card-Button {
     width: 33px;
-    height: 6px;
+    height: 7px;
     margin-top: 20px;
   }
 
   .button-text {
     color: #fff;
-
+    position: absolute;
+    top: -0%;
+    left: 50%;
+    transform: translate(-50%);
     text-align: center;
     font-family: Gilroy;
-    font-size: 4px;
+    font-size: 3px;
     font-style: normal;
     font-weight: 800;
     line-height: normal;

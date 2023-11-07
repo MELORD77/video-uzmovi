@@ -38,18 +38,18 @@ const GridData = [
 ];
 
 export default function ResponsiveGrid({ handleClick, open, setOpen }) {
-  const handleSort = (id) => {
-    // eslint-disable-next-line array-callback-return
-    GridData.filter((e) => e.id === id).forEach((e) => (e.clicked = false));
+  // const handleSort = (id) => {
+  //   // eslint-disable-next-line array-callback-return
+  //   GridData.filter((e) => e.id === id).forEach((e) => (e.clicked = false));
 
-    // console.log(id);
-  };
-  const handleClickOpen = () => {
-    handleClick();
-    // setTimeout(() => {
-    //   setOpen(false);
-    // }, 3000);
-  };
+  //   // console.log(id);
+  // };
+  // const handleClickOpen = () => {
+  //   handleClick();
+  //   // setTimeout(() => {
+  //   //   setOpen(false);
+  //   // }, 3000);
+  // };
 
   return (
     <>
@@ -91,6 +91,7 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
               </div>
               <Box className="cardContent">
                 <LazyLoadImage
+                  className="image"
                   loading="lazy"
                   effect="blur"
                   alt={"card"}
@@ -120,7 +121,8 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
                   loading="lazy"
                   src={cardFooterImage}
                   alt="cardFooter"
-                  style={{ width: "100%" }}
+                  width={"100%"}
+                  // style={{ width: "100%" }}
                 />
                 <button className="card-Button">
                   <h1 className="button-text"> открыть</h1>

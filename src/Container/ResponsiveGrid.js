@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../Css/giftBox.css";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import "react-chat-elements/dist/main.css";
 import cardFooterImage from "../images/footer.svg";
 import cardHeader from "../images/cardHeader.svg";
@@ -10,54 +10,67 @@ import cardCenter from "../images/cardCenter.svg";
 import romp from "../images/romp.svg";
 import { motion } from "framer-motion";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Block } from "@mui/icons-material";
-const GridData = [
-  { id: 1, clicked: true },
-  { id: 2, clicked: true },
-  { id: 3, clicked: true },
-  { id: 4, clicked: true },
-  { id: 5, clicked: true },
-  { id: 6, clicked: true },
-  { id: 7, clicked: true },
-  { id: 8, clicked: true },
-  { id: 9, clicked: true },
-  { id: 10, clicked: true },
-  { id: 11, clicked: true },
-  { id: 12, clicked: true },
-  { id: 13, clicked: true },
-  { id: 14, clicked: true },
-  { id: 15, clicked: true },
-  { id: 16, clicked: true },
-  { id: 17, clicked: true },
-  { id: 18, clicked: true },
-  { id: 19, clicked: true },
-  { id: 20, clicked: true },
-  { id: 21, clicked: true },
-  { id: 22, clicked: false },
-  { id: 23, clicked: true },
-  { id: 24, clicked: true },
-];
+import useSound from "use-sound";
 
+import click_sound from "../sounds/sound.wav";
 export default function ResponsiveGrid({
-  handleClick,
   open,
   setOpen,
   imageLoaded,
   cardImage,
 }) {
-  // const handleSort = (id) => {
-  //   // eslint-disable-next-line array-callback-return
-  //   GridData.filter((e) => e.id === id).forEach((e) => (e.clicked = false));
+  const [data, setData] = React.useState([
+    { id: 1, clicked: true, count: null },
+    { id: 2, clicked: true, count: null },
+    { id: 3, clicked: true, count: null },
+    { id: 4, clicked: true, count: null },
+    { id: 5, clicked: true, count: null },
+    { id: 6, clicked: true, count: null },
+    { id: 7, clicked: true, count: null },
+    { id: 8, clicked: true, count: null },
+    { id: 9, clicked: true, count: null },
+    { id: 10, clicked: true, count: null },
+    { id: 11, clicked: true, count: null },
+    { id: 12, clicked: true, count: null },
+    { id: 13, clicked: true, count: null },
+    { id: 14, clicked: true, count: null },
+    { id: 15, clicked: true, count: null },
+    { id: 16, clicked: true, count: null },
+    { id: 17, clicked: true, count: null },
+    { id: 18, clicked: true, count: null },
+    { id: 19, clicked: true, count: null },
+    { id: 20, clicked: true, count: null },
+    { id: 21, clicked: true, count: null },
+    { id: 22, clicked: true, count: null },
+    { id: 23, clicked: true, count: null },
+    { id: 24, clicked: true, count: null },
+  ]);
+  const [play] = useSound(click_sound);
 
-  //   // console.log(id);
-  // };
-  // const handleClickOpen = () => {
-  //   handleClick();
-  //   // setTimeout(() => {
-  //   //   setOpen(false);
-  //   // }, 3000);
-  // };
+  const handleClick = (id) => {
+    // Find the clicked item by id
+    const clickedItem = data.find((item) => item.id === id);
 
+    if (clickedItem) {
+      // Update the clicked property
+      clickedItem.clicked = !clickedItem.clicked;
+      clickedItem.count = generateRandomNumber();
+
+      // Create a new array with the updated item
+      const updatedData = data.map((item) =>
+        item.id === id ? clickedItem : item
+      );
+
+      // Update the state with the new array
+      setData(updatedData);
+    }
+    play();
+  };
+
+  const generateRandomNumber = () => {
+    const newRandomNumber = Math.floor(Math.random() * 9) * 10 + 10;
+    return newRandomNumber;
+  };
   return (
     <>
       <div
@@ -71,79 +84,129 @@ export default function ResponsiveGrid({
           flexWrap: "wrap",
         }}
       >
-        {GridData.map((e, index) => (
+        {data.map((e, index) => (
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
             key={index}
             className="giftGrid"
+            onClick={() => handleClick(e.id)}
           >
-            <Box className="giftBox">
-              <div className="headerCard">
-                <img
-                  loading="lazy"
-                  className="card-Header-footer"
-                  src={cardHeaderFooter}
-                  alt="card"
-                />
-                <img
-                  loading="lazy"
-                  src={cardHeaderBorder}
-                  alt="card"
-                  width={"100%"}
-                  height={"18px"}
-                />
-                <img
-                  loading="lazy"
-                  className="card-Header-Black"
-                  src={cardHeader}
-                  alt="card"
-                />
-                <h1 className="header-text">Boriga Baraka</h1>
-              </div>
-              <motion.div style={{ display: e.clicked ? "none" : "Block" }}>
-                <Box className="cardContent">
-                  <LazyLoadImage
-                    className="image"
-                    loading="lazy"
-                    effect="blur"
-                    alt={"card"}
-                    src={cardImage} // use normal <img> attributes as props
-                    width={"100%"}
-                    // beforeLoad={(e) => console.log(e)}
-                  />
-                </Box>
-                <Box className="cardFooter">
-                  <Box className="cardCenter">
+            {!e.clicked ? (
+              <motion.div>
+                <Box className="giftBox">
+                  <div className="headerCard">
                     <img
                       loading="lazy"
-                      src={cardCenter}
+                      className="card-Header-footer"
+                      src={cardHeaderFooter}
+                      alt="card"
+                    />
+                    <img
+                      loading="lazy"
+                      src={cardHeaderBorder}
+                      alt="card"
+                      width={"100%"}
+                      height={"18px"}
+                    />
+                    <img
+                      loading="lazy"
+                      className="card-Header-Black"
+                      src={cardHeader}
+                      alt="card"
+                    />
+                    <h1 className="header-text">Boriga Baraka</h1>
+                  </div>
+                  <Box
+                    sx={{
+                      width: "97%",
+                      ml: "2%",
+                      mt: "2%",
+                      borderRadius: "5px",
+                      height: "97%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+
+                      bgcolor: "rgba(255, 255, 255, 0.5)",
+                    }}
+                  >
+                    <Box sx={{}}>
+                      <h1 className="pointCount">{e.count} </h1>
+                      <h1 className="pointCountText"> очков</h1>
+                    </Box>
+                  </Box>
+                </Box>
+              </motion.div>
+            ) : (
+              <motion.div style={{ display: "block" }}>
+                <Box className="giftBox">
+                  <div className="headerCard">
+                    <img
+                      loading="lazy"
+                      className="card-Header-footer"
+                      src={cardHeaderFooter}
+                      alt="card"
+                    />
+                    <img
+                      loading="lazy"
+                      src={cardHeaderBorder}
+                      alt="card"
+                      width={"100%"}
+                      height={"18px"}
+                    />
+                    <img
+                      loading="lazy"
+                      className="card-Header-Black"
+                      src={cardHeader}
+                      alt="card"
+                    />
+                    <h1 className="header-text">Boriga Baraka</h1>
+                  </div>
+
+                  <Box className="cardContent">
+                    <LazyLoadImage
+                      className="image"
+                      loading="lazy"
+                      effect="blur"
+                      alt={"card"}
+                      src={cardImage} // use normal <img> attributes as props
+                      width={"100%"}
+                      // beforeLoad={(e) => console.log(e)}
+                    />
+                  </Box>
+                  <Box className="cardFooter">
+                    <Box className="cardCenter">
+                      <img
+                        loading="lazy"
+                        src={cardCenter}
+                        alt="cardFooter"
+                        width={"100%"}
+                      />
+                    </Box>
+                    <Box>
+                      <img
+                        loading="lazy"
+                        className="cardRomp"
+                        src={romp}
+                        alt="cardFooter"
+                      />
+                    </Box>
+                    <img
+                      className="cardFooterImage"
+                      loading="lazy"
+                      src={cardFooterImage}
                       alt="cardFooter"
                       width={"100%"}
                     />
+                    <button className="card-Button">
+                      <h1 className="button-text"> открыть</h1>
+                    </button>
                   </Box>
-                  <Box>
-                    <img
-                      loading="lazy"
-                      className="cardRomp"
-                      src={romp}
-                      alt="cardFooter"
-                    />
-                  </Box>
-                  <img
-                    className="cardFooterImage"
-                    loading="lazy"
-                    src={cardFooterImage}
-                    alt="cardFooter"
-                    width={"100%"}
-                  />
-                  <button className="card-Button">
-                    <h1 className="button-text"> открыть</h1>
-                  </button>
                 </Box>
               </motion.div>
-            </Box>
+            )}
           </motion.div>
         ))}
       </div>

@@ -1,5 +1,6 @@
 .detail_box {
   color: #dfe0e2;
+  width: 430px;
   border-radius: 20px;
   padding: 2px;
   padding-inline-start: 15px;
@@ -8,22 +9,23 @@
 .detail_box h1 {
   color: #fff;
   text-align: center;
-  font-family: "Gilroy", sans-serif;
+  font-family: Vipnagorgialla;
   font-size: 36px;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 400;
   line-height: normal;
 }
 
 .detail_box p {
-  color: #fff;
-  width: 644px;
+  color: #f2f2f2;
+  width: 100% !important;
+  word-wrap: break-word;
   text-align: center;
-  font-family: "Gilroy", sans-serif;
-  font-size: 40px;
+  font-family: Inter;
+  font-size: 36px;
   font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+  font-weight: 400;
+  line-height: 48px;
 }
 
 .button-box {

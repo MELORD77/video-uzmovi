@@ -53,7 +53,7 @@ export default function GiftContainer() {
           <ContentTools />
 
           <Grid item xs={12} md={12}>
-            {loaded && imageLoaded ? (
+            {loaded ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}

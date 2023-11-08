@@ -38,7 +38,7 @@ function ResponsiveAppBar() {
               px: 2,
             }}
           >
-            <Box component={NavLink} to={"/main"} sx={{}}>
+            <Box component={NavLink} to={"/"} sx={{}}>
               <img src={logo} alt={"logo"} width={"40px"} />
             </Box>
             <Box
@@ -50,7 +50,7 @@ function ResponsiveAppBar() {
             </Box>
             <Box>
               <IconButton sx={{ p: 0 }}>
-                <Avatar alt="U" src="../images/Gift-rafiki.svg" />
+                <Avatar alt="U" src="" />
               </IconButton>
             </Box>
 
@@ -59,7 +59,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Box
               component={NavLink}
-              to={"/main"}
+              to={"/"}
               sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
             >
               <img src={logo} alt={"logo"} width={"40px"} />

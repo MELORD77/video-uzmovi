@@ -9,8 +9,9 @@ export default function GiftFooter() {
         sx={{
           width: "100%",
           height: "160px",
-          backgroundImage: `url(${imageBg})`,
+
           backgroundSize: "100%",
+          backgroundImage: `url(${imageBg})`,
           display: { xs: "flex", md: "flex" },
           px: 2,
           justifyContent: "space-around",

@@ -1,18 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Grid } from "@mui/material";
 import ResponsiveGrid from "../ResponsiveGrid";
+import { motion } from "framer-motion";
 import "./style.css";
 import { useWindowSize } from "@uidotdev/usehooks";
 import imageBg from "../../images/Rectangle10.png";
 import ResponsiveAppBar from "../Navbar";
 import ContentTools from "./ContentTools";
 import GiftFooter from "./giftFooter";
-import { motion } from "framer-motion";
-import SkeletonPage from "../../Components/Skeleton";
-export default function GiftContainer() {
-  const size = useWindowSize();
 
-  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 101}px`;
+import SkeletonPage from "../../Components/Skeleton";
+import useImage from "react-use-image";
+import cardImage from "../../images/Vector.svg";
+export default function GiftContainer() {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const size = useWindowSize();
+  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 160}px`;
+  const mainHeightLg =
+    size.height === null ? "80vh" : ` ${size.height - 140}px`;
+  const { loaded } = useImage(cardImage);
+  console.log(loaded);
+  useEffect(() => {
+    const delay = 2000; // Delay in milliseconds
+
+    const timer = setTimeout(() => {
+      // Code to execute after the delay
+      setImageLoaded(true);
+      console.log("Delayed function executed");
+    }, delay);
+
+    // Clean up the timer when the component unmounts or changes
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <motion.div
       style={{
@@ -26,15 +45,34 @@ export default function GiftContainer() {
       <Container
         sx={{
           maxWidth: { xs: "xxl", md: "xl", lg: "xl" },
-          pt: { xs: 7, lg: 10 },
+          px: { xs: 3, lg: 10 },
+          pt: { xs: 8, lg: 10 },
         }}
       >
-        <Grid container height={mainHeight}>
+        <Grid container height={{ xs: mainHeight, lg: mainHeightLg }}>
           <ContentTools />
 
           <Grid item xs={12} md={12}>
-            <SkeletonPage />
-            {/* <ResponsiveGrid /> */}
+            {loaded && imageLoaded ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                // transition={{ delay: 00.5, duration: 0.5 }}
+              >
+                <ResponsiveGrid
+                  imageLoaded={imageLoaded}
+                  cardImage={cardImage}
+                />
+              </motion.div>
+            ) : (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                <SkeletonPage />
+              </motion.div>
+            )}
           </Grid>
           <GiftFooter />
         </Grid>

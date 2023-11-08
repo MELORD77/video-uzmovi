@@ -9,7 +9,7 @@ export default function ContentTools() {
       <Box
         sx={{
           width: "100%",
-          height: "60px",
+          height: "50px",
           display: "flex",
           px: 2,
           justifyContent: "space-between",

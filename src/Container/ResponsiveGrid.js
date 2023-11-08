@@ -2,14 +2,15 @@ import * as React from "react";
 import "../Css/giftBox.css";
 import { Box } from "@mui/material";
 import "react-chat-elements/dist/main.css";
-import cardImage from "../images/Vector.svg";
 import cardFooterImage from "../images/footer.svg";
 import cardHeader from "../images/cardHeader.svg";
 import cardHeaderBorder from "../images/cardHeaderBorder.svg";
 import cardHeaderFooter from "../images/cardHeaderFooter.svg";
 import cardCenter from "../images/cardCenter.svg";
 import romp from "../images/romp.svg";
+import { motion } from "framer-motion";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Block } from "@mui/icons-material";
 const GridData = [
   { id: 1, clicked: true },
   { id: 2, clicked: true },
@@ -32,12 +33,18 @@ const GridData = [
   { id: 19, clicked: true },
   { id: 20, clicked: true },
   { id: 21, clicked: true },
-  { id: 22, clicked: true },
+  { id: 22, clicked: false },
   { id: 23, clicked: true },
   { id: 24, clicked: true },
 ];
 
-export default function ResponsiveGrid({ handleClick, open, setOpen }) {
+export default function ResponsiveGrid({
+  handleClick,
+  open,
+  setOpen,
+  imageLoaded,
+  cardImage,
+}) {
   // const handleSort = (id) => {
   //   // eslint-disable-next-line array-callback-return
   //   GridData.filter((e) => e.id === id).forEach((e) => (e.clicked = false));
@@ -58,14 +65,20 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
           width: "100%",
           display: "flex",
           justifyContent: "center",
-          alignItems: "start",
-          alignContent: "start",
-          gap: "8px",
+          alignItems: "flex-start",
+          alignContent: "flex-start",
+          gap: "7px",
           flexWrap: "wrap",
         }}
       >
         {GridData.map((e, index) => (
-          <div key={index}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            key={index}
+            className="giftGrid"
+          >
             <Box className="giftBox">
               <div className="headerCard">
                 <img
@@ -89,47 +102,49 @@ export default function ResponsiveGrid({ handleClick, open, setOpen }) {
                 />
                 <h1 className="header-text">Boriga Baraka</h1>
               </div>
-              <Box className="cardContent">
-                <LazyLoadImage
-                  className="image"
-                  loading="lazy"
-                  effect="blur"
-                  alt={"card"}
-                  src={cardImage} // use normal <img> attributes as props
-                  width={"100%"}
-                  onLoad={(e) => console.log(e)}
-                />
-              </Box>
-              <Box className="cardFooter">
-                <Box className="cardCenter">
-                  <img
+              <motion.div style={{ display: e.clicked ? "none" : "Block" }}>
+                <Box className="cardContent">
+                  <LazyLoadImage
+                    className="image"
                     loading="lazy"
-                    src={cardCenter}
+                    effect="blur"
+                    alt={"card"}
+                    src={cardImage} // use normal <img> attributes as props
+                    width={"100%"}
+                    // beforeLoad={(e) => console.log(e)}
+                  />
+                </Box>
+                <Box className="cardFooter">
+                  <Box className="cardCenter">
+                    <img
+                      loading="lazy"
+                      src={cardCenter}
+                      alt="cardFooter"
+                      width={"100%"}
+                    />
+                  </Box>
+                  <Box>
+                    <img
+                      loading="lazy"
+                      className="cardRomp"
+                      src={romp}
+                      alt="cardFooter"
+                    />
+                  </Box>
+                  <img
+                    className="cardFooterImage"
+                    loading="lazy"
+                    src={cardFooterImage}
                     alt="cardFooter"
                     width={"100%"}
                   />
+                  <button className="card-Button">
+                    <h1 className="button-text"> открыть</h1>
+                  </button>
                 </Box>
-                <Box>
-                  <img
-                    loading="lazy"
-                    className="cardRomp"
-                    src={romp}
-                    alt="cardFooter"
-                  />
-                </Box>
-                <img
-                  loading="lazy"
-                  src={cardFooterImage}
-                  alt="cardFooter"
-                  width={"100%"}
-                  // style={{ width: "100%" }}
-                />
-                <button className="card-Button">
-                  <h1 className="button-text"> открыть</h1>
-                </button>
-              </Box>{" "}
+              </motion.div>
             </Box>
-          </div>
+          </motion.div>
         ))}
       </div>
 

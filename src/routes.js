@@ -11,21 +11,21 @@ const routes = [
     element: <Page404 />,
   },
   {
-    path: "/main",
+    path: "/",
     element: <MainPage />,
   },
   {
     path: "/gift",
     element: <GiftContainer />,
   },
-  {
-    path: "/",
-    element: (
-      <React.Suspense fallback={<>...</>}>
-        <Loading />
-      </React.Suspense>
-    ),
-  },
+  // {
+  //   path: "/",
+  //   element: (
+  //     <React.Suspense fallback={<>...</>}>
+  //       <Loading />
+  //     </React.Suspense>
+  //   ),
+  // },
 ];
 
 export default routes;

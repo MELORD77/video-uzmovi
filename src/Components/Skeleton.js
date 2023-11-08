@@ -49,12 +49,11 @@ export default function SkeletonPage() {
             <Skeleton
               sx={{ bgcolor: "#1E2738" }}
               variant="rectangular"
-              animation="wave"
+              animation="pulse"
               width={"100%"}
               height={"100%"}
             />
           </Box>
-          {/* <Skeleton variant="rectangular" width={110} height={160} /> */}
         </div>
       ))}
     </div>

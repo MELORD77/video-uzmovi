@@ -48,11 +48,13 @@
 }
 
 .toolsText {
-  color: #fdd60c !important;
+  color: var(--Yellow-main, #fdd60c);
   text-align: center;
-  font-size: 52px;
+  /* font-family: Vipnagorgialla; */
+  font-size: 36px;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .footer-text {

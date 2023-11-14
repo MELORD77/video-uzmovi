@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 const Loading = lazy(() => import("./pages/Loading"));
 const App = lazy(() => import("./App"));
 const root = ReactDOM.createRoot(document.getElementById("root"));

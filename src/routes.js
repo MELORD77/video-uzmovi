@@ -1,9 +1,8 @@
-import React, { Suspense, lazy } from "react";
+import React, { lazy } from "react";
 import GiftContainer from "./Container/GridContaner/GiftContainer";
 
 const MainPage = lazy(() => import("./Container/MainContainer"));
 const Page404 = lazy(() => import("./pages/page404"));
-const Loading = lazy(() => import("./pages/Loading"));
 
 const routes = [
   {

@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../Css/giftBox.css";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import "react-chat-elements/dist/main.css";
 import cardFooterImage from "../images/footer.svg";
 import cardHeader from "../images/cardHeader.svg";
@@ -9,68 +9,16 @@ import cardHeaderFooter from "../images/cardHeaderFooter.svg";
 import cardCenter from "../images/cardCenter.svg";
 import romp from "../images/romp.svg";
 import { motion } from "framer-motion";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import useSound from "use-sound";
 
-import click_sound from "../sounds/sound.wav";
 export default function ResponsiveGrid({
   open,
   setOpen,
   imageLoaded,
+  data,
+  setData,
   cardImage,
+  handleClick,
 }) {
-  const [data, setData] = React.useState([
-    { id: 1, clicked: true, count: null },
-    { id: 2, clicked: true, count: null },
-    { id: 3, clicked: true, count: null },
-    { id: 4, clicked: true, count: null },
-    { id: 5, clicked: true, count: null },
-    { id: 6, clicked: true, count: null },
-    { id: 7, clicked: true, count: null },
-    { id: 8, clicked: true, count: null },
-    { id: 9, clicked: true, count: null },
-    { id: 10, clicked: true, count: null },
-    { id: 11, clicked: true, count: null },
-    { id: 12, clicked: true, count: null },
-    { id: 13, clicked: true, count: null },
-    { id: 14, clicked: true, count: null },
-    { id: 15, clicked: true, count: null },
-    { id: 16, clicked: true, count: null },
-    { id: 17, clicked: true, count: null },
-    { id: 18, clicked: true, count: null },
-    { id: 19, clicked: true, count: null },
-    { id: 20, clicked: true, count: null },
-    { id: 21, clicked: true, count: null },
-    { id: 22, clicked: true, count: null },
-    { id: 23, clicked: true, count: null },
-    { id: 24, clicked: true, count: null },
-  ]);
-  const [play] = useSound(click_sound);
-
-  const handleClick = (id) => {
-    // Find the clicked item by id
-    const clickedItem = data.find((item) => item.id === id);
-
-    if (clickedItem) {
-      // Update the clicked property
-      clickedItem.clicked = !clickedItem.clicked;
-      clickedItem.count = generateRandomNumber();
-
-      // Create a new array with the updated item
-      const updatedData = data.map((item) =>
-        item.id === id ? clickedItem : item
-      );
-
-      // Update the state with the new array
-      setData(updatedData);
-    }
-    play();
-  };
-
-  const generateRandomNumber = () => {
-    const newRandomNumber = Math.floor(Math.random() * 9) * 10 + 10;
-    return newRandomNumber;
-  };
   return (
     <>
       <div
@@ -80,7 +28,7 @@ export default function ResponsiveGrid({
           justifyContent: "center",
           alignItems: "flex-start",
           alignContent: "flex-start",
-          gap: "7px",
+          gap: "10px",
           flexWrap: "wrap",
         }}
       >
@@ -91,10 +39,12 @@ export default function ResponsiveGrid({
             transition={{ delay: 0.5, duration: 0.5 }}
             key={index}
             className="giftGrid"
-            onClick={() => handleClick(e.id)}
+            onClick={() => {
+              handleClick(e.id);
+            }}
           >
-            {!e.clicked ? (
-              <motion.div>
+            {e.clicked ? (
+              <motion.div style={{ borderRadius: "8px" }}>
                 <Box className="giftBox">
                   <div className="headerCard">
                     <img
@@ -166,7 +116,7 @@ export default function ResponsiveGrid({
                   </div>
 
                   <Box className="cardContent">
-                    <LazyLoadImage
+                    <img
                       className="image"
                       loading="lazy"
                       effect="blur"

@@ -2,14 +2,13 @@ import { Box } from "@mui/material";
 import React from "react";
 import imageBg from "../../images/footerBox.png";
 import person from "../../images/imagePerson.png";
-export default function GiftFooter() {
+export default function GiftFooter({ numberAttempts }) {
   return (
     <>
       <Box
         sx={{
           width: "100%",
           height: "160px",
-
           backgroundSize: "100%",
           backgroundImage: `url(${imageBg})`,
           display: { xs: "flex", md: "flex" },
@@ -19,7 +18,9 @@ export default function GiftFooter() {
         }}
       >
         <Box sx={{ width: { xs: "270px", md: "500px" } }}>
-          <h1 className="footer-text">Выберите 3 произвольные карты</h1>
+          <h1 className="footer-text">
+            Выберите {numberAttempts} произвольные карты
+          </h1>
         </Box>
 
         <Box sx={{ pb: 5 }}>

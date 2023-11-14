@@ -2,8 +2,9 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import "./style.css";
 import CloseIcon from "@mui/icons-material/Close";
-import InfoIcon from "@mui/icons-material/Info";
-export default function ContentTools() {
+import coinIcon from "../../images/icons8-coin-48.png";
+import CountUp from "react-countup";
+export default function ContentTools({ totalCount }) {
   return (
     <>
       <Box
@@ -28,8 +29,14 @@ export default function ContentTools() {
         <Box>
           {" "}
           <button className="tools-button1">
-            <InfoIcon sx={{ color: "#f2f2f2", ml: 0 }} />
-            <Typography className="navbar-button1">Правила игры</Typography>
+            {/* <InfoIcon sx={{ color: "#f2f2f2", ml: 0 }} /> */}
+            <img src={coinIcon} alt="coin" width={25} />
+
+            <Typography className="navbar-button1">
+              {/* Total: */}
+              <CountUp start={totalCount} duration={3} />
+              {/* Правила игры */}
+            </Typography>
           </button>
         </Box>
       </Box>

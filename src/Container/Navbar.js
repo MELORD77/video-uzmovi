@@ -14,11 +14,11 @@ import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import textImage from "../images/Boriga-Baraka.svg";
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  // const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+  // const handleCloseNavMenu = () => {
+  //   setAnchorElNav(null);
+  // };
 
   return (
     <AppBar position={"fixed"} className="Navbar-image">

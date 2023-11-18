@@ -10,7 +10,7 @@ import ContentTools from "./ContentTools";
 import GiftFooter from "./giftFooter";
 import SkeletonPage from "../../Components/Skeleton";
 import useImage from "react-use-image";
-import cardImage from "../../images/Vector.svg";
+import cardImage from "../../images/Vector_png.png";
 import useSound from "use-sound";
 import click_sound from "../../sounds/sound.wav";
 import CustomizedDialogs from "../../Components/dialog_Component";
@@ -143,7 +143,7 @@ export default function GiftContainer() {
       <ResponsiveAppBar />
       <Container
         sx={{
-          maxWidth: { xs: "xxl", md: "xl", lg: "xl" },
+          maxWidth: { xs: "xl", md: "xl", lg: "xl" },
           px: { xs: 3, lg: 10 },
           pt: { xs: 8, lg: 10 },
           position: "relative",

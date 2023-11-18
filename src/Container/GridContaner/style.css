@@ -67,6 +67,7 @@
 }
 
 .person {
+  width: 120px;
   filter: drop-shadow(1px -1px 8px #e8d5738c);
 }
 
@@ -111,6 +112,10 @@
 
   .footer-text {
     font-size: 24px;
+  }
+  .person {
+    width: 80px;
+    filter: drop-shadow(1px -1px 8px #e8d5738c);
   }
 }
 

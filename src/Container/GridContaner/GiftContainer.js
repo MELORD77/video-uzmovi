@@ -15,11 +15,13 @@ import useSound from "use-sound";
 import click_sound from "../../sounds/sound.wav";
 import CustomizedDialogs from "../../Components/dialog_Component";
 import ResultDialog from "../../Components/Result_dialog";
+import NumberAttemptsDialog from "../../Components/Number_attempts_dialog";
 
 let count = 0;
 
 export default function GiftContainer() {
   const [open, setOpen] = React.useState(true);
+  const [openAttemptsNumber, setOpenAttemptsNumber] = React.useState(true);
   const size = useWindowSize();
   const { loaded } = useImage(cardImage);
   const [numberAttempts, setNumberAttempts] = useState(3);
@@ -32,6 +34,7 @@ export default function GiftContainer() {
   //   setOfferModalOpen(false);
   // };
   const handleOpenBack = () => {
+    // setOpenAttemptsNumber(true);
     // setOfferModalOpen(true);
   };
 
@@ -91,7 +94,9 @@ export default function GiftContainer() {
     count++;
     console.log(numberAttempts);
     console.log(count);
+
     if (count === numberAttempts) {
+      setOpenAttemptsNumber(true);
       setNumberAttempts(
         generateRandomClick(countClickedTrue() > 8 ? 8 : countClickedTrue())
       );
@@ -119,7 +124,7 @@ export default function GiftContainer() {
   };
 
   useEffect(() => {
-    const delay = 9000; // Delay in milliseconds
+    const delay = 3000; // Delay in milliseconds
 
     const timer = setTimeout(() => {
       // Code to execute after the delay
@@ -179,7 +184,11 @@ export default function GiftContainer() {
         </Grid>
 
         <CustomizedDialogs open={open} setOpen={setOpen} />
-
+        <NumberAttemptsDialog
+          open={openAttemptsNumber}
+          numberAttempts={numberAttempts}
+          setOpen={setOpenAttemptsNumber}
+        />
         <ResultDialog
           totalCount={sumCounts()}
           open={offerModalOpen}

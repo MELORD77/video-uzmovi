@@ -124,18 +124,20 @@ export default function GiftContainer() {
   };
 
   useEffect(() => {
-    const delay = 3000; // Delay in milliseconds
+    const delay = 1000; // Delay in milliseconds
 
     const timer = setTimeout(() => {
       // Code to execute after the delay
       // setImageLoaded(true);
+
+      setOpenAttemptsNumber(false);
       handleOpenBack();
       console.log("Delayed function executed");
     }, delay);
 
     // Clean up the timer when the component unmounts or changes
     return () => clearTimeout(timer);
-  }, []);
+  }, [numberAttempts]);
   return (
     <motion.div
       style={{
@@ -183,12 +185,12 @@ export default function GiftContainer() {
           <GiftFooter numberAttempts={numberAttempts} />
         </Grid>
 
-        <CustomizedDialogs open={open} setOpen={setOpen} />
         <NumberAttemptsDialog
           open={openAttemptsNumber}
           numberAttempts={numberAttempts}
           setOpen={setOpenAttemptsNumber}
         />
+        <CustomizedDialogs open={open} setOpen={setOpen} />
         <ResultDialog
           totalCount={sumCounts()}
           open={offerModalOpen}

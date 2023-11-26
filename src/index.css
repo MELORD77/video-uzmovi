@@ -1,8 +1,7 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: #09002f;
-  background-size: 100% 100%;
+
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -11,6 +10,15 @@ body {
   overflow: auto;
   scrollbar-width: thin;
 
+  flex-shrink: 0;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.89) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url("./images/Rectangle10.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   /* For WebKit Browsers */
 }
 /* width */
@@ -25,7 +33,7 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #432ad1;
+  background: #090520;
 }
 
 /* Handle on hover */
@@ -36,4 +44,17 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.136) 100%
+      ),
+      url(./images/mainBgMobile1.png),
+      rgba(211, 211, 211, 0.606) 50% / cover no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }

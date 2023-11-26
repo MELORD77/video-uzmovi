@@ -21,7 +21,7 @@ function ResponsiveAppBar() {
   // };
 
   return (
-    <AppBar position={"fixed"} className="Navbar-image">
+    <AppBar position={"sticky"} className="Navbar-image">
       <Container maxWidth="xl">
         <Toolbar
           disableGutters

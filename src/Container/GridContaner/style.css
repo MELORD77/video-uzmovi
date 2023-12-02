@@ -69,6 +69,7 @@
 .person {
   width: 120px;
   filter: drop-shadow(1px -1px 8px #e8d5738c);
+  margin-top: -40px;
 }
 
 /* Mobile devices */
@@ -120,11 +121,15 @@
 }
 
 /* Tablets and small desktops */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1424px) {
   .tools-button1 {
     width: 150px;
   }
-
+  .person {
+    width: 70px;
+    filter: drop-shadow(1px -1px 8px #e8d5738c);
+    margin-top: -40px;
+  }
   .toolsText {
     font-size: 48px;
   }

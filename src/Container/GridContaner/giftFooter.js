@@ -9,12 +9,12 @@ export default function GiftFooter({ numberAttempts }) {
       <Box
         sx={{
           width: "100%",
-          height: { xs: "120px", md: "180px" },
-          backgroundSize: "100%",
+          height: { xs: "120px", md: "100px" },
+          backgroundSize: "100% 110%",
           backgroundImage: `url(${imageBg})`,
           display: { xs: "flex", md: "flex" },
-          px: 2,
-          mt: 5,
+          px: 0,
+          mt: 4,
           justifyContent: "space-around",
           alignItems: "center",
         }}
@@ -25,8 +25,7 @@ export default function GiftFooter({ numberAttempts }) {
           </h1>
         </Box>
 
-        <Box sx={{ pb: 5 }}>
-          {" "}
+        <Box>
           <img src={person} alt="person" className="person" />
         </Box>
       </Box>

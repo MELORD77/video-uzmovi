@@ -26,9 +26,9 @@ export default function GiftContainer() {
   const { loaded } = useImage(cardImage);
   const [numberAttempts, setNumberAttempts] = useState(3);
   const [play] = useSound(click_sound);
-  const mainHeight = size.height === null ? "80vh" : ` ${size.height - 160}px`;
+  const mainHeight = size.height === null ? "92vh" : ` ${size.height - 160}px`;
   const mainHeightLg =
-    size.height === null ? "80vh" : ` ${size.height - 140}px`;
+    size.height === null ? "80vh" : ` ${size.height - 760}px`;
   const [offerModalOpen, setOfferModalOpen] = React.useState(false);
   // const handleCloseBack = () => {
   //   setOfferModalOpen(false);
@@ -150,13 +150,14 @@ export default function GiftContainer() {
       <ResponsiveAppBar />
       <Container
         sx={{
-          maxWidth: { xs: "xl", md: "xl", lg: "xl" },
-          px: { xs: 3, lg: 10 },
-          pt: { xs: 8, lg: 10 },
+          // maxWidth: { xs: "xl", md: "lg", lg: "xl" },
+          px: { xs: 3, md: 13, lg: 1 },
+          pt: { xs: 2, lg: 2 },
           position: "relative",
+          height: "92vh",
         }}
       >
-        <Grid container height={{ xs: mainHeight, lg: mainHeightLg }}>
+        <Grid container>
           <ContentTools totalCount={sumCounts()} />
           <Grid item xs={12} md={12}>
             {loaded ? (
@@ -181,7 +182,6 @@ export default function GiftContainer() {
               </motion.div>
             )}
           </Grid>
-
           <GiftFooter numberAttempts={numberAttempts} />
         </Grid>
 

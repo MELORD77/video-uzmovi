@@ -27,7 +27,7 @@ function ResponsiveAppBar() {
           disableGutters
           variant="dense"
           className="toolbar"
-          sx={{ minHeight: "45px" }}
+          sx={{ minHeight: "8vh" }}
         >
           {/* Mobile version */}
           <Box

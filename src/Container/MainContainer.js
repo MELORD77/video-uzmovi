@@ -38,11 +38,12 @@ const MainPage = () => {
       <Box
         // className={"scroll-stop"}
         sx={{
-          height: mainHeight - 100,
-          pt: 20,
+          height: mainHeight - 180,
         }}
       >
         <TitleAnimationText />
+      </Box>
+      <Box sx={{ m: 4, mt: 15 }}>
         <FooterComponent />
       </Box>
       <MarqueeComponent />

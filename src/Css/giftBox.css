@@ -124,6 +124,129 @@
   line-height: normal;
   text-transform: uppercase;
 }
+
+@media (max-width: 1400px) {
+  .giftBox {
+    margin-right: 10px;
+    margin-left: 10px;
+    /* padding: 10px; */
+    position: relative;
+    width: 70px;
+    height: 95px;
+
+    /* display: none; */
+    border-radius: 8px;
+    border: 2px solid rgb(30, 41, 58);
+    box-shadow: 0px 0px 20px 0px rgba(237, 213, 0, 0.1);
+  }
+  .pointCount {
+    color: var(--Yellow-main, #fdd60c);
+    text-align: center;
+    font-family: Vipnagorgialla;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 2px;
+    margin-bottom: 0px;
+  }
+  .pointCountText {
+    color: var(--Yellow-main, #fdd60c);
+    text-align: center;
+    margin-top: 0;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .headerCard {
+    width: 90px;
+    height: 18px;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%);
+  }
+  .card-Header-Black {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 89%;
+    top: 0%;
+  }
+  .card-Header-footer {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 92%;
+    top: 0%;
+    margin: 0;
+  }
+  .cardContent {
+    margin: 0;
+    padding: 1px;
+  }
+  .cardFooter {
+    margin: 0;
+    /* padding: 1px; */
+    margin-top: -41px;
+    /* background: rgba(25, 33, 48, 1); */
+    height: 40%;
+  }
+  .cardCenter {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: -2.5px;
+    width: 100%;
+  }
+  .cardRomp {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 9px;
+    /* width: 60%; */
+  }
+  .card-Button {
+    background-color: rgba(25, 33, 48, 1);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80px;
+    height: 19px;
+    margin-top: 40px;
+    border: 0;
+    border-radius: 10px;
+    /* width: 60%; */
+  }
+  .button-text {
+    color: #fff;
+    text-align: center;
+    font-family: Gilroy;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  .header-text {
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%);
+    top: 0px;
+    color: #fff;
+    text-align: center;
+    font-family: Gilroy;
+    font-size: 6.583px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+}
+
 @media (max-width: 600px) {
   .giftBox {
     margin: 0px 04px;

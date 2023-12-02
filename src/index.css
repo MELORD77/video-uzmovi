@@ -11,18 +11,20 @@ body {
   scrollbar-width: thin;
 
   flex-shrink: 0;
+
   background: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.89) 0%,
       rgba(0, 0, 0, 0.2) 100%
     ),
-    url("./images/Rectangle10.png");
+    url("./images/Rectangle10.png"),
+    rgba(20, 20, 68, 0.839) 50% / cover no-repeat;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   /* For WebKit Browsers */
 }
 /* width */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 10px;
 }
 
@@ -40,8 +42,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
-code {
+*/ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
@@ -53,7 +54,7 @@ code {
         rgba(0, 0, 0, 0.136) 100%
       ),
       url(./images/mainBgMobile1.png),
-      rgba(211, 211, 211, 0.606) 50% / cover no-repeat;
+      rgba(14, 14, 14, 0.606) 50% / cover no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
   }

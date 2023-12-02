@@ -21,8 +21,8 @@ export default function ResponsiveGrid({
 }) {
   return (
     <>
-      <div
-        style={{
+      <Box
+        sx={{
           width: "100%",
           display: "flex",
           justifyContent: "center",
@@ -30,6 +30,7 @@ export default function ResponsiveGrid({
           alignContent: "flex-start",
           gap: "10px",
           flexWrap: "wrap",
+          border: "1px solid red",
         }}
       >
         {data.map((e, index) => (
@@ -92,7 +93,7 @@ export default function ResponsiveGrid({
             ) : (
               <motion.div style={{ display: "block" }}>
                 <Box className="giftBox">
-                  <div className="headerCard">
+                  {/* <div className="headerCard">
                     <img
                       loading="lazy"
                       className="card-Header-footer"
@@ -153,13 +154,13 @@ export default function ResponsiveGrid({
                     <button className="card-Button">
                       <h1 className="button-text"> открыть</h1>
                     </button>
-                  </Box>
+                  </Box> */}
                 </Box>
               </motion.div>
             )}
           </motion.div>
         ))}
-      </div>
+      </Box>
 
       {/* <ResponsiveDialog open={open} setOpen={setOpen} /> */}
       {/* {alert && ( */}

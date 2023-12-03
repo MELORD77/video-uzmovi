@@ -9,9 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow: auto;
   scrollbar-width: thin;
-
   flex-shrink: 0;
-
   background: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.89) 0%,
@@ -23,24 +21,23 @@ body {
   background-repeat: no-repeat;
   /* For WebKit Browsers */
 }
-/* width */
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #432ad100;
+  background: #04030350;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #090520;
+  background: #090520f2;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #d91313d8;
 }
 */ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

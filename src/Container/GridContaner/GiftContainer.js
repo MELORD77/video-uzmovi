@@ -10,7 +10,8 @@ import ContentTools from "./ContentTools";
 import GiftFooter from "./giftFooter";
 import SkeletonPage from "../../Components/Skeleton";
 import useImage from "react-use-image";
-import cardImage from "../../images/Vector_png.png";
+// import cardImage from "../../images/Vector_png.png";
+import cardImage from "../../images/cardMoblie.svg";
 import useSound from "use-sound";
 import click_sound from "../../sounds/sound.wav";
 import CustomizedDialogs from "../../Components/dialog_Component";
@@ -149,10 +150,10 @@ export default function GiftContainer() {
     >
       <ResponsiveAppBar />
       <Container
+        maxWidth={"xl"}
         sx={{
-          // maxWidth: { xs: "xl", md: "lg", lg: "xl" },
-          px: { xs: 3, md: 13, lg: 1 },
-          pt: { xs: 2, lg: 2 },
+          px: { xs: 3, md: 10, lg: 10 },
+          pt: { xs: 2, md: 0, lg: 0 },
           position: "relative",
           height: "92vh",
         }}
@@ -182,8 +183,8 @@ export default function GiftContainer() {
               </motion.div>
             )}
           </Grid>
-          <GiftFooter numberAttempts={numberAttempts} />
         </Grid>
+        <GiftFooter numberAttempts={numberAttempts} />
 
         <NumberAttemptsDialog
           open={openAttemptsNumber}

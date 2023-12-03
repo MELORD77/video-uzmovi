@@ -9,7 +9,11 @@ export default function GiftFooter({ numberAttempts }) {
       <Box
         sx={{
           width: "100%",
-          height: { xs: "120px", md: "100px" },
+          position: "fixed",
+          bottom: "0px",
+          left: "0%",
+
+          height: { xs: "120px", md: "75px", lg: "130px" },
           backgroundSize: "100% 110%",
           backgroundImage: `url(${imageBg})`,
           display: { xs: "flex", md: "flex" },

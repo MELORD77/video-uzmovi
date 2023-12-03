@@ -12,7 +12,7 @@ export default function ContentTools({ totalCount }) {
           width: "100%",
           height: "50px",
           display: "flex",
-          px: 2,
+          px: 1,
           justifyContent: "space-between",
           alignItems: "center",
         }}
@@ -20,7 +20,15 @@ export default function ContentTools({ totalCount }) {
         <Box>
           <button className="tools-button1">
             <CloseIcon sx={{ color: "#f2f2f2", ml: 0 }} />
-            <Typography className="navbar-button1">Завершить игру</Typography>
+            <Typography
+              sx={{ display: { xs: "none", md: "block" } }}
+              variant="body"
+              color={"#fff"}
+              fontFamily={"Gilroy"}
+              fontWeight={800}
+            >
+              Завершить игру
+            </Typography>
           </button>
         </Box>
         <Box>
@@ -32,8 +40,14 @@ export default function ContentTools({ totalCount }) {
             {/* <InfoIcon sx={{ color: "#f2f2f2", ml: 0 }} /> */}
             <img src={coinIcon} alt="coin" width={25} />
 
-            <Typography className="navbar-button1">
-              {/* Total: */}
+            <Typography
+              sx={{ display: { xs: "none", md: "block" } }}
+              variant="body"
+              color={"#fff"}
+              fontFamily={"Gilroy"}
+              fontWeight={800}
+            >
+              Total:
               <CountUp start={totalCount} duration={3} />
               {/* Правила игры */}
             </Typography>

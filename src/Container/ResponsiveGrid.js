@@ -30,7 +30,7 @@ export default function ResponsiveGrid({
           alignContent: "flex-start",
           gap: "10px",
           flexWrap: "wrap",
-          border: "1px solid red",
+          // border: "1px solid red",
         }}
       >
         {data.map((e, index) => (
@@ -56,10 +56,9 @@ export default function ResponsiveGrid({
                     />
                     <img
                       loading="lazy"
+                      className="card-header-border"
                       src={cardHeaderBorder}
                       alt="card"
-                      width={"100%"}
-                      height={"18px"}
                     />
                     <img
                       loading="lazy"
@@ -75,15 +74,14 @@ export default function ResponsiveGrid({
                       ml: "2%",
                       mt: "2%",
                       borderRadius: "5px",
-                      height: "97%",
+                      height: "98%",
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
-
                       bgcolor: "rgba(255, 255, 255, 0.5)",
                     }}
                   >
-                    <Box sx={{}}>
+                    <Box>
                       <h1 className="pointCount">{e.count} </h1>
                       <h1 className="pointCountText"> очков</h1>
                     </Box>
@@ -93,7 +91,7 @@ export default function ResponsiveGrid({
             ) : (
               <motion.div style={{ display: "block" }}>
                 <Box className="giftBox">
-                  {/* <div className="headerCard">
+                  <div className="headerCard">
                     <img
                       loading="lazy"
                       className="card-Header-footer"
@@ -102,10 +100,9 @@ export default function ResponsiveGrid({
                     />
                     <img
                       loading="lazy"
+                      className="card-header-border"
                       src={cardHeaderBorder}
                       alt="card"
-                      width={"100%"}
-                      height={"18px"}
                     />
                     <img
                       loading="lazy"
@@ -118,13 +115,12 @@ export default function ResponsiveGrid({
 
                   <Box className="cardContent">
                     <img
-                      className="image"
+                      className="image-content"
                       loading="lazy"
                       effect="blur"
                       alt={"card"}
                       src={cardImage} // use normal <img> attributes as props
                       width={"100%"}
-                      // beforeLoad={(e) => console.log(e)}
                     />
                   </Box>
                   <Box className="cardFooter">
@@ -154,7 +150,7 @@ export default function ResponsiveGrid({
                     <button className="card-Button">
                       <h1 className="button-text"> открыть</h1>
                     </button>
-                  </Box> */}
+                  </Box>
                 </Box>
               </motion.div>
             )}
